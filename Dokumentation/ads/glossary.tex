@@ -1,0 +1,46 @@
+%!TEX root = ../dokumentation.tex
+
+%
+% vorher in Konsole folgendes aufrufen:
+%	makeglossaries 
+%makeglossaries dokumentation.acn && makeglossaries dokumentation.glo
+
+%
+% Glossareintraege --> referenz, name, beschreibung
+% Aufruf mit \gls{...}
+%
+%Befehle für Symbole
+
+
+
+\newglossaryentry{symb:d}{
+name=$\boldsymbol{d}$,
+text=$d$,
+description={Abstand von Sender zu Objekt [m]},
+sort=symbold, type=symbolslist
+}
+
+%Normales glossar
+\newglossaryentry{Glossareintrag}{name={Glossareintrag},plural={Glossareinträge},description={Ein Glossar beschreibt verschiedenste Dinge in kurzen Worten}}
+
+\newglossaryentry{Commodity-Hardware}{name={Commodity-Hardware},description={\flqq Computer hardware that is affordable and easy to obtain. Typically it is a low-performance system that is IBM PC-compatible and is capable of running Microsoft Windows, Linux, or MS-DOS without requiring any special devices or equipment.\frqq\footcite{Beal.2015}}}
+
+\newglossaryentry{Git}{name={Git},plural={Git},description={Git ist ein kostenloses System zur Versionskontrolle für kleine wie auch sehr große Projekte. ({\url{http://git-scm.com/}})}}
+
+%% modsuper glossary display style
+\newglossarystyle{modsuper}{%
+\glossarystyle{super}%
+\singlespacing
+\renewcommand{\arraystretch}{1.1}
+\renewenvironment{theglossary}%
+    {\tablehead{}\tabletail{}%
+     \begin{supertabular}{@{}lp{\glsdescwidth}}}%<----no margin
+    {\end{supertabular}}%
+\renewcommand{\glsgroupskip}{}%
+\renewcommand*{\glossaryentryfield}[5]{%
+\glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%
+\setlength{\glsdescwidth}{0.8\textwidth}
+
+
+}
+

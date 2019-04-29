@@ -1,0 +1,5 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[1] Config.pm:305> INFO - Logfile is 'document.tex.blg'
+[132] biber-MSWIN32:313> INFO - === 
+[1206] Utils.pm:209> ERROR - Cannot find control file 'document.tex.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[1206] Biber.pm:114> INFO - ERRORS: 1

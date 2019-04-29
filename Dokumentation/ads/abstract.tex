@@ -1,0 +1,37 @@
+%!TEX root = ../dokumentation.tex
+
+\pagestyle{empty}
+
+\iflang{de}{%
+% Dieser deutsche Teil wird nur angezeigt, wenn die Sprache auf Deutsch eingestellt ist.
+\renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+
+% \begin{otherlanguage}{english} % auskommentieren, wenn Abstract auf Deutsch sein soll
+\begin{abstract}
+In dieser Projektarbeit wird das Konzept für eine \ac{LiDAR}-basierte Objekterkennung entwickelt und diese prototypisch in Matlab implementiert.  Die Objekterkennung wird auf Innenräume angewendet und der verwendete 360°-\ac{LiDAR}-Sensor befindet sich stationär auf einem Stativ. Die Objekte im Sensorsichtfeld werden unterschieden und im Sensordatenbild dargestellt.
+Dazu werden die Clustering-Algorithmen K-Means und \ac{DBSCAN} für die Anwendung in der Objekterkennung analysiert.  Aufgrund der Ergebnisse dieser Analyse wird der \ac{DBSCAN}-Algorithmus zur Verwendung ausgewählt. 
+Der \ac{DBSCAN}-Algorithmus wird auf die Verwendung mit \ac{LiDAR}-Daten angepasst, indem der Eingangsparameter $\epsilon$ während des Ablaufs des Algorithmus variabel verändert wird. Die Objekte werden im Sensordatenbild mit umgebenden \acp{AABB} und einer farblichen Unterscheidung der Punkte der verschiedenen Objekte visualisiert. Des Weiteren wird eine Tabelle ausgegeben, in der wesentliche Eigenschaften der Objekte eingetragen sind.
+Außerdem wird ein Tracking-Algorithmus zum Verfolgen eines einzelnen ausgewählten Objektes auf Grundlage des Kalman-Filters entwickelt, der auf das Tracken einer Person ausgelegt ist.\\
+
+In this research the concept for a \ac{LiDAR}-based object detection is developed and prototypically implemented in Matlab. The object detection is used in indoor environments and the used 360°-\ac{LiDAR}-sensor is stationary on a tripod. The objects in the sensor-data are differentiated and displayed in the sensor-data visualization.
+For this purpose, the clustering algorithms K-Means and \ac{DBSCAN} are analysed for the application in a \ac{LiDAR}-based object detection. Based on the results of this analysis, the \ac{DBSCAN} algorithm is selected for use.
+The \ac{DBSCAN}-algorithm has been adapted to be used with \ac{LiDAR}-data by changing the input parameter $\epsilon$ dynamically during the execution of the algorithm. The objects in the sensor-data visualization are distinguished by surrounding \acp{AABB} and a color differentiation of the points belonging to different objects. Furthermore, a table is produced in which essential properties of the objects are displayed.
+Additionally, a tracking algorithm for single-object-tracking designed to track a person based on the Kalman-filter is developed.
+
+\end{abstract}
+% \end{otherlanguage} % auskommentieren, wenn Abstract auf Deutsch sein soll
+}
+
+
+
+\iflang{en}{%
+% Dieser englische Teil wird nur angezeigt, wenn die Sprache auf Englisch eingestellt ist.
+\renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+
+\begin{abstract}
+In this research the concept for a \ac{LiDAR}-based object detection is developed and prototypically implemented in Matlab. The object decognition is used in indoor environments and the used 360°-ac{LiDAR}-sensor is stationary on a tripod. The objects in the sensor field of view are differentiated and displayed in the sensor data image.
+For this, the clustering algorithms K-Means and \ ac {DBSCAN} are analysed for the application in object recognition. Based on the results of this analysis, the \ ac {DBSCAN} algorithm is selected for use.
+The \ac-{DBSCAN} algorithm has been adapted to be used with \ac{LiDAR}-data by changing the input parameter \epsilon dynamically during the execution of the algorithm. The objects are visualized in the sensor data image with surrounding \acp{AABB} and a color differentiation of the points belonging to different objects. Furthermore, a table is produced in which essential properties of the objects are displayed.
+Additionally, a tracking algorithm for single-object-tracking based on the Kalman-filter is developed, designed to track a person.
+\end{abstract}
+}
