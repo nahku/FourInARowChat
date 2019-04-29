@@ -1,0 +1,41 @@
+html
+    head
+        script(src="/js/jquery.js")
+    body
+        div(style="width:500px; text-align:right;")
+            a(href="/logout") Logout
+        div#msgs(style="height:400px; width:400px; overflow: scroll; float:left;")
+        div#users(style="height:400px; width:100px; overflow: scroll;")
+        form#chatForm
+            label(for="msg") #{user}:&nbsp;
+            input#msg(type="text")
+            button#sendBtn Send
+            script.
+                var socket = new WebSocket('ws://localhost:8181/', 'chat');
+                socket.onopen = function () {
+                    socket.send('{"type": "join", "name":"#{user}"}');
+                }
+                $('#sendBtn').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = $('#msg').val();
+                    socket.send('{"type": "msg", "msg": "' + msg + '"}');
+                    $('#msg').val('');
+                });
+                socket.onmessage = function (msg) {
+                    var data = JSON.parse(msg.data);
+                    switch (data.type) {
+                        case 'msg':
+                            var msg = $('<div>' + data.name + ': ' + data.msg +
+                                    '</div>');
+                            $('#msgs').append(msg);
+                            break;
+                        case 'join':
+                            $('#users').empty();
+                            for (var i = 0; i < data.names.length; i++) {
+                                var user = $('<div>' + data.names[i] + '</div>');
+                                $('#users').append(user);
+                            }
+                            break;
+                    }
+                };
