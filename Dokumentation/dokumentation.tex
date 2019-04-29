@@ -1,0 +1,147 @@
+%%**************************************************************
+%% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
+%%
+%% Autor: Tobias Dreher, Yves Fischer
+%% Datum: 06.07.2011
+%%
+%% Autor: Michael Gruben
+%% Datum: 15.05.2013
+%%
+%% Autor: Markus Barthel
+%% Datum: 22.08.2014
+%%**************************************************************
+
+\input{ads/header}
+
+\newglossary[slg]{symbolslist}{sym}{sbl}{Symbolverzeichnis}
+
+\makeglossaries
+
+\input{ads/glossary}
+
+\begin{document}
+
+	% Deckblatt
+	\begin{spacing}{1}
+		\input{ads/deckblatt}
+	\end{spacing}
+	\newpage
+
+	% Sperrvermerk
+	%\input{ads/sperrvermerk}
+	%\newpage
+
+	% Erklärung
+	%\input{ads/erklaerung}
+	%\newpage
+
+	% Abstract
+	%\input{ads/abstract}
+	%\newpage
+
+	\pagestyle{plain}		% nur Seitenzahlen im Fuß
+	
+	\RedeclareSectionCommand[beforeskip=\kapitelabstand]{chapter} % stellt Abstand 	vor Kapitelüberschriften ein
+	%\setcounter{page}{1} %Damit Literaturverzeichnis richtige Referenzen macht
+	% Inhaltsverzeichnis
+	\begin{spacing}{1.09}
+		\begingroup
+		
+			% auskommentieren für Seitenzahlen unter Inhaltsverzeichnis
+			\renewcommand*{\chapterpagestyle}{empty}
+			\pagestyle{empty}		
+			\setcounter{tocdepth}{1}
+			\tableofcontents
+			\clearpage
+		\endgroup
+	\end{spacing}
+	\newpage
+	
+	\pagenumbering{Roman}
+	 
+	% Symbolverzeichnis
+	%\printglossary[type=symbolslist, style =modsuper ]
+	
+	% Abkürzungsverzeichnis
+	\cleardoublepage
+	\input{ads/acronyms}
+	
+	
+
+
+%	\newpage\null\thispagestyle{plain}\newpage
+
+	% Abbildungsverzeichnis
+	\cleardoublepage
+	\listoffigures
+	
+%	\newpage\null\thispagestyle{plain}\newpage
+
+	%Tabellenverzeichnis
+	\cleardoublepage
+	\listoftables
+	
+%	\newpage\null\thispagestyle{plain}\newpage
+
+	% Quellcodeverzeichnis
+	\cleardoublepage
+	\lstlistoflistings
+	\cleardoublepage
+
+	\pagenumbering{arabic}
+	
+	\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
+
+	% Einleitung
+	\input{content/Einleitung.tex}
+	
+	% Theoretische Grundlagen
+	\input{content/GrundlagenUndStandDerTechnik.tex}
+		
+	% Planung
+	\input{content/Konzept.tex}
+	
+	% Setup
+	\input{content/Implementierung.tex}
+	
+	% Schlussbetrachtung
+	\input{content/Schlussbetrachtung.tex}
+	
+	% Fazit
+%	\input{content/Fazit.tex}
+
+	% Inhalt
+	%\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
+	%	\edef\FileName{content/\i kapitel}%
+	%		\IfFileExists{\FileName}{%
+	%			\input{\FileName}
+	%		}
+	%		{%
+	%			%file does not exist
+	%		}
+	%}
+
+	\clearpage
+		
+	\pagenumbering{roman}
+	
+	% Literaturverzeichnis
+	\cleardoublepage
+	\printbibheading
+	\printbibliography[nottype=online,heading=subbibliography,title={Publikationen}]
+	\printbibliography[type=online,notkeyword=Gesetz,notkeyword=Standard,heading=subbibliography,title={Online Quellen}]	\printbibliography[type=online,keyword=Gesetz,heading=subbibliography,title={Rechtsquellenverzeichnis}]
+\printbibliography[type=online,keyword=Standard,heading=subbibliography,title={Standards \& Normen}]
+	
+%	\renewcommand\bibname{Literaturverzeichnis}
+%	\printbibliography
+
+%	\newpage\null\thispagestyle{plain}\newpage
+	
+
+	
+	% sonstiger Anhang
+	%\clearpage
+	%\appendix
+	%\input{ads/appendix}
+	
+\end{document}

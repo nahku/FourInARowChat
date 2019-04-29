@@ -28,11 +28,12 @@ app.post('/setTile', function (req, res) {
           }
       }while(!correct);
 
-      //sende aktualisiertes Spielfeld an Client
+      //sende aktualisiertes Spielfeld an Clients
       //check
       if(_grid.checkGameOver()){
         //sende an clients Winner Player mit userID
       }
+      //sende anderem Spieler, er nun an der Reihe
     }
 });
 

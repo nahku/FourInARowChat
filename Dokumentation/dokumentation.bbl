@@ -1,0 +1,63 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Reif.2010}{book}{}
+      \name{author}{1}{}{%
+        {{hash=2f8af18c6f8001e858da17cf0fbe114d}{%
+           family={Knoll},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{bookauthor}{1}{}{%
+        {{hash=f38f1c694c30b868bb5241e5640cef24}{%
+           family={Reif},
+           familyi={R\bibinitperiod},
+           given={Konrad},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden}%
+      }
+      \list{publisher}{1}{%
+        {Vieweg+Teubner Verlag}%
+      }
+      \strng{namehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{fullhash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{bibnamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authorbibnamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authornamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authorfullhash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{bookauthorbibnamehash}{f38f1c694c30b868bb5241e5640cef24}
+      \strng{bookauthornamehash}{f38f1c694c30b868bb5241e5640cef24}
+      \strng{bookauthorfullhash}{f38f1c694c30b868bb5241e5640cef24}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783834813145}
+      \field{title}{Fahrstabilisierungssysteme und Fahrerassistenzsysteme}
+      \field{year}{2010}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
