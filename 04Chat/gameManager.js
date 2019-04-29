@@ -1,8 +1,5 @@
 function checkGameOver(gameField) {
-    if (!req.session.user) {
-        res.redirect('/');
-    } else {
-        next(); }
+      test
 }
 
 function checkVerticalGameOver(){
@@ -12,6 +9,7 @@ function checkVerticalGameOver(){
 function checkHorizontalGameOver(){
 
 }
+
 function checkDiagonalGameOver(){
 
 }
