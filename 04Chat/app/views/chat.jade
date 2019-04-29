@@ -10,6 +10,7 @@ html
             button#printBtn Print
             script.
                 let count = 0;
+                var grid = new Grid();
                 /*function print(boardXXX) {
                     for (let i=0; i<xMax; i++) {
                     var row = $('<div></div>');
@@ -61,7 +62,7 @@ html
                  $('#printBtn').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
-                    msg = getGrid();
+                    msg = grid.getGrid();
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                     //$('#msg').val('');
                 });
