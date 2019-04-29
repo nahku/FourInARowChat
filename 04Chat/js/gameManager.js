@@ -53,9 +53,8 @@ function checkDiagonalGameOver(){
 
 }
 */
-class Grid(){
+function Grid(){
 
-  constructor (){
     let yMax = 7;
     let xMax = 6;
     let board = [];
@@ -67,10 +66,14 @@ class Grid(){
         for (let j=0; j<yMax; j++) {
             board[i][j] = 0;
         }
-    }}
+    }
+
+    this._grid = board;
+
+    Grid.prototype.getGrid = function(){
+
+      return this._grid;
+    }
 }
 
-function getGrid(){
 
-  return _grid;
-}
