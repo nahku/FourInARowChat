@@ -1,7 +1,7 @@
-var _express = require('express');
-var _app = express();
+//var _express = require('express');
+//var _app = express();
 
-var _grid;
+var _grid = new Grid();
 var _currentUserID; //Spieler, der aktuell an der Reihe ist
 var _player1; //Spieler 1
 var _player2; //Spieler 2
@@ -12,7 +12,7 @@ function initGame(player1, player2){
   _player2 = player2;
 }
 
-app.post('/setTile', function (req, res) {
+/*app.post('/setTile', function (req, res) {
     var position = req.body.position,
         userID = req.body.userID;
 
@@ -22,7 +22,7 @@ app.post('/setTile', function (req, res) {
     }
     else{
       do{
-          var correct = grid.setTile(position, userID));
+          var correct = grid.setTile(position, userID);
           if(!correct){
             //neue Position von Spieler anfordern
           }
@@ -51,4 +51,26 @@ function checkHorizontalGameOver(){
 
 function checkDiagonalGameOver(){
 
+}
+*/
+class Grid(){
+
+  constructor (){
+    let yMax = 7;
+    let xMax = 6;
+    let board = [];
+
+    for (let i=0; i<xMax; i++) {
+        
+        board[i] = [];
+
+        for (let j=0; j<yMax; j++) {
+            board[i][j] = 0;
+        }
+    }}
+}
+
+function getGrid(){
+
+  return _grid;
 }
