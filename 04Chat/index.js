@@ -95,6 +95,9 @@ wss.on('request', function (request) {
             case 'msg':
                 var msg = '{"type": "msg", "name": "' + name + '", "msg":"' + data.msg + '"}';
                 break;
+            case 'board':
+                var msg = '{"type": "board", "name": "' + name + '", "msg": "' + data.msg + '"}';
+                break;
         }
 
         for (var key in connections) {

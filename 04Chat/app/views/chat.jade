@@ -4,8 +4,54 @@ html
     body
         div(style="width:500px; text-align:right;")
             a(href="/logout") Logout
-        div#msgs(style="height:400px; width:400px; overflow: scroll; float:left;")
-        div#users(style="height:400px; width:100px; overflow: scroll;")
+        div#msgs(style="height:400px; width:400px; overflow: scroll; float:left; display:inline;")
+        div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
+            button#printBtn Print
+            script.
+                let yMax = 7;
+                let xMax = 6;
+                let board = [];
+                let count = 0;
+                let j;
+                for (let i=0; i<xMax; i++) {
+                board[i] = [];
+                for (let j=0; j<yMax; j++) {
+                    board[i][j] = 0;
+
+                }
+                }
+                function print(boardXXX) {
+                    for (let i=0; i<xMax; i++) {
+                    var row = $('<div></div>');
+                    $('#game').append(row);
+
+                    for (let j=0; j<yMax; j++) {
+                        var tile = $('<span>' + board[i][j] + ' </span>');
+                        $('#game').append(tile);
+                     
+                    }
+                    }
+                }
+                function print(msg) {
+
+                    var row = $('<div></div>');
+                        $('#game').append(row);
+                        
+                    for (let i=0; i<42; i++) {
+
+                    if(count == 7){
+                        var row = $('<div></div>');
+                        $('#game').append(row);
+                        count = 0; 
+                    }
+
+                    var tile = $('<span>' + msg[i*2] + ' </span>');
+                    $('#game').append(tile);
+
+                    count++;
+                    }
+                }
+        div#users(style="height:400px; width:100px; overflow: scroll; float;")
         form#chatForm
             label(for="msg") #{user}:&nbsp;
             input#msg(type="text")
@@ -22,7 +68,15 @@ html
                     socket.send('{"type": "msg", "msg": "' + msg + '"}');
                     $('#msg').val('');
                 });
+                 $('#printBtn').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = board;
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                    //$('#msg').val('');
+                });
                 socket.onmessage = function (msg) {
+                    console.log("Daten:" + msg.data);
                     var data = JSON.parse(msg.data);
                     switch (data.type) {
                         case 'msg':
@@ -37,5 +91,11 @@ html
                                 $('#users').append(user);
                             }
                             break;
+                        case 'board':
+                            console.log("Print Board");
+                            print(data.msg);
+
                     }
                 };
+        
+    
