@@ -1,28 +1,17 @@
 html
     head
         script(src="/js/jquery.js")
-        script(src="/js/gameManager.js")
+        //script(src="/js/index.js")
     body
         div(style="width:500px; text-align:right;")
             a(href="/logout") Logout
         div#msgs(style="height:400px; width:400px; overflow: scroll; float:left; display:inline;")
         div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
+            button#startGame Start Game
             button#printBtn Print
             script.
                 let count = 0;
-                var grid = new Grid();
-                /*function print(boardXXX) {
-                    for (let i=0; i<xMax; i++) {
-                    var row = $('<div></div>');
-                    $('#game').append(row);
-
-                    for (let j=0; j<yMax; j++) {
-                        var tile = $('<span>' + board[i][j] + ' </span>');
-                        $('#game').append(tile);
-                     
-                    }
-                    }
-                }*/
+            
                 function print(msg) {
 
                     var row = $('<div></div>');
@@ -41,7 +30,30 @@ html
 
                     count++;
                     }
+
+                    var row = $('<div>--------------</div>');
+                    $('#game').append(row);
+
+                    for (let i=1; i<8; i++) {
+                        var column = $('<span>' + i + ' </span>');
+                        $('#game').append(column);
+                    }
                 }
+
+                function printMessage(msg){
+                    
+                    var msg = $('<div> Gamemaster: ' + msg +
+                                    '</div>');
+                            $('#msgs').append(msg);
+                }
+            button#column1 1
+            button#column2 2
+            button#column3 3
+            button#column4 4
+            button#column5 5
+            button#column6 6
+            button#column7 7
+
         div#users(style="height:400px; width:100px; overflow: scroll; float;")
         form#chatForm
             label(for="msg") #{user}:&nbsp;
@@ -59,10 +71,26 @@ html
                     socket.send('{"type": "msg", "msg": "' + msg + '"}');
                     $('#msg').val('');
                 });
-                 $('#printBtn').on('click', function (e) {
+                $('#startGame').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
-                    msg = grid.getGrid();
+                    msg = 'Start new Game';
+                    socket.send('{"type": "start", "msg": "' + msg + '"}');
+                    //$('#msg').val('');
+                });
+                $('#printBtn').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = 1;
+                    console.log(msg);
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                    //$('#msg').val('');
+                });
+                $('#column1').on('click', function (e) {
+                    e.preventDefault();
+                    setTile(1, '#{user}');
+                    var name = '#{user}',
+                    msg = getGrid();
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                     //$('#msg').val('');
                     test();
@@ -85,7 +113,12 @@ html
                             break;
                         case 'board':
                             console.log("Print Board");
+                            console.log(data.msg);
                             print(data.msg);
+                            break;
+                         case 'start':
+                            printMessage(data.msg);
+                            break;
 
                     }
                 };
