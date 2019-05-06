@@ -37,20 +37,44 @@ function initGame(player1, player2){
     }
 });
 */
-function checkGameOver() {
 
+function test(){
+	let board = [];
+	for (let i=0; i<6; i++) {
+        
+        board[i] = [];
+
+        for (let j=0; j<7; j++) {
+            board[i][j] = 0;
+			if(i == j){
+				board[i][j] = 3;
+			}
+        }
+    }
+	
+	this._grid = board;
+	
+	console.log(checkDiagonalGameOver());
+}
+function checkGameOver() {
+	var flag;
+	flag = checkVerticalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
 }
 
 function checkVerticalGameOver(){
 	var grid = _grid;
 	
-	for (let i=0; i<6; i++){
+	for (let column=0; column<6; column++){
         for (let offset=0; offset<3; offset++) {
             var flag = true;
-			var lowestPlayerTile = grid[i][offset];
+			var lowestPlayerTile = grid[column][offset];
 			if (lowestPlayerTile != 0){
-				for (let j=0; j<4; j++){
-					if (lowestPlayerTile != grid[i][offset+j]){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != grid[column][i+offset]){
 						flag = false;
 						break;
 					}
@@ -66,11 +90,69 @@ function checkVerticalGameOver(){
 }
 
 function checkHorizontalGameOver(){
+	var grid = _grid;
+	
+	for (let column=0; column<6; column++){
+        for (let offset=0; offset<4; offset++) {
+            var flag = true;
+			var lowestPlayerTile = grid[offset][column];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != grid[offset+i][column]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
 
+	return 0;
 }
 
 function checkDiagonalGameOver(){
+	var grid = _grid;
+	
+	for (let offsetHorizontal=0; offsetHorizontal<4; offsetHorizontal++){
+        for (let offsetVertical=0; offsetVertical<4; offsetVertical++) {
+            var flag = true;
+			var lowestPlayerTile = grid[offsetHorizontal][offsetVertical];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != grid[offsetHorizontal+i][offsetVertical+i]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
+	
+	for (let offsetHorizontal=3; offsetHorizontal<7; offsetHorizontal++){
+        for (let offsetVertical=0; offsetVertical<3; offsetVertical++) {
+            var flag = true;
+			var lowestPlayerTile = grid[offsetHorizontal][offsetVertical];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != grid[offsetHorizontal-i][offsetVertical+i]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
 
+	return 0;
 }
 
 function Grid(){

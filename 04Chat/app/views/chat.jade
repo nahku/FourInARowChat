@@ -65,6 +65,7 @@ html
                     msg = grid.getGrid();
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                     //$('#msg').val('');
+                    test();
                 });
                 socket.onmessage = function (msg) {
                     console.log("Daten:" + msg.data);
