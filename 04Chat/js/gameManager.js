@@ -36,13 +36,33 @@ function initGame(player1, player2){
       //sende anderem Spieler, er nun an der Reihe
     }
 });
-
+*/
 function checkGameOver() {
 
 }
 
 function checkVerticalGameOver(){
+	var grid = _grid;
+	
+	for (let i=0; i<6; i++){
+        for (let offset=0; offset<3; offset++) {
+            var flag = true;
+			var lowestPlayerTile = grid[i][offset];
+			if (lowestPlayerTile != 0){
+				for (let j=0; j<4; j++){
+					if (lowestPlayerTile != grid[i][offset+j]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
 
+	return 0;
 }
 
 function checkHorizontalGameOver(){
@@ -52,7 +72,7 @@ function checkHorizontalGameOver(){
 function checkDiagonalGameOver(){
 
 }
-*/
+
 function Grid(){
 
     let yMax = 7;
