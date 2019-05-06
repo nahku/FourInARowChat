@@ -1,7 +1,7 @@
 //var _express = require('express');
 //var _app = express();
 
-var _grid = new Grid();
+var _grid;
 var _currentUserID; //Spieler, der aktuell an der Reihe ist
 var _player1; //Spieler 1
 var _player2; //Spieler 2
@@ -10,6 +10,7 @@ function initGame(player1, player2){
   _currentUserID = 1;
   _player1 = player1;
   _player2 = player2;
+  this._grid = new Grid ();
 }
 
 /*app.post('/setTile', function (req, res) {
@@ -67,13 +68,55 @@ function Grid(){
             board[i][j] = 0;
         }
     }
-
     this._grid = board;
 
-    Grid.prototype.getGrid = function(){
+   /* Grid.prototype.getGrid = function(){
 
       return this._grid;
+    }*/
+
+    Grid.prototype.setTile = function (column, player){
+
+      let xMax = 6;
+      var set;
+      if (player == 'u1'){
+        set = 1;
+      } else if (player == 'u2'){
+        set = 2;
+      }
+      for (let i=5; i>=0; i--) {
+          
+          if (this._grid[i][column-1] == 0){
+            this._grid[i][column-1] = set; 
+            break;
+          };
+      }
     }
 }
+
+function getGrid(){
+
+  return this._grid;
+
+}
+
+function set(column, player){
+
+  let xMax = 6;
+  var set;
+  if (player == 'u1'){
+    set = 1;
+  } else if (player == 'u2'){
+    set = 2;
+  }
+  for (let i=5; i>=0; i--) {
+      
+      if (this._grid[i][column-1] == 0){
+        this._grid[i][column-1] = set; 
+        break;
+      };
+  }
+}
+
 
 
