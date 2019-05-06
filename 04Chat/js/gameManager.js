@@ -54,7 +54,7 @@ function test(){
 	
 	this._grid = board;
 	
-	console.log(checkDiagonalGameOver());
+	console.log(checkGameOver());
 }
 function checkGameOver() {
 	var flag;
@@ -63,6 +63,20 @@ function checkGameOver() {
 	if(flag != 0){
 		return flag;
 	}
+	
+	flag = checkHorizontalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
+	
+	flag = checkDiagonalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
+	
+	return 0;
 }
 
 function checkVerticalGameOver(){
