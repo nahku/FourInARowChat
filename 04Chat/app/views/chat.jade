@@ -1,6 +1,7 @@
 html
     head
         script(src="/js/jquery.js")
+        script(src="/js/gameManager.js")
     body
         div(style="width:500px; text-align:right;")
             a(href="/logout") Logout
@@ -8,19 +9,9 @@ html
         div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
             button#printBtn Print
             script.
-                let yMax = 7;
-                let xMax = 6;
-                let board = [];
                 let count = 0;
-                let j;
-                for (let i=0; i<xMax; i++) {
-                board[i] = [];
-                for (let j=0; j<yMax; j++) {
-                    board[i][j] = 0;
-
-                }
-                }
-                function print(boardXXX) {
+                var grid = new Grid();
+                /*function print(boardXXX) {
                     for (let i=0; i<xMax; i++) {
                     var row = $('<div></div>');
                     $('#game').append(row);
@@ -31,7 +22,7 @@ html
                      
                     }
                     }
-                }
+                }*/
                 function print(msg) {
 
                     var row = $('<div></div>');
@@ -71,9 +62,10 @@ html
                  $('#printBtn').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
-                    msg = board;
+                    msg = grid.getGrid();
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                     //$('#msg').val('');
+                    test();
                 });
                 socket.onmessage = function (msg) {
                     console.log("Daten:" + msg.data);
