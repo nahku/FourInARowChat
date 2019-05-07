@@ -105,8 +105,9 @@ wss.on('request', function (request) {
                 var msg = '{"type": "start", "name": "' + name + '", "msg":"' + data.msg + '"}';
                 break;
             case 'board':
-                var msg = '{"type": "board", "name": "' + name + '", "msg": "' + this._grid.getGrid() + '"}';
-                console.log(this._grid.getGrid());
+                var tmp = JSON.stringify(getGrid());
+                tmp = tmp.split(":")
+                var msg = '{"type": "board", "name": "' + name + '", "msg": "' + tmp[1] + '"}';
                 break;
         }
 
@@ -124,7 +125,6 @@ function initGame(player1, player2){
   _player1 = player1;
   _player2 = player2;
   this._grid = new Grid ();
-  console.log('New Game');
 }
 
 /*app.post('/setTile', function (req, res) {
@@ -184,10 +184,10 @@ function Grid(){
     }
     this._grid = board;
 
-   Grid.prototype.getGrid = function(){
+   /*Grid.prototype.getGrid = function(){
 
       return this._grid;
-    }
+    }*/
 
     Grid.prototype.setTile = function (column, player){
 
@@ -208,11 +208,11 @@ function Grid(){
     }
 }
 
-/*function getGrid(){
+function getGrid(){
 
   return this._grid;
 
-}*/
+}
 
 function set(column, player){
 

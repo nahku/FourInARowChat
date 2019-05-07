@@ -12,17 +12,18 @@ html
             script.
                 let count = 0;
             
-                function print(msg) {
+                function printBoard(msg) {
 
                     var row = $('<div></div>');
                         $('#game').append(row);
                         
-                    for (let i=0; i<42; i++) {
+                    for (let i=1; i<48; i++) {
 
                     if(count == 7){
                         var row = $('<div></div>');
                         $('#game').append(row);
                         count = 0; 
+                        i++;
                     }
 
                     var tile = $('<span>' + msg[i*2] + ' </span>');
@@ -76,15 +77,12 @@ html
                     var name = '#{user}',
                     msg = 'Start new Game';
                     socket.send('{"type": "start", "msg": "' + msg + '"}');
-                    //$('#msg').val('');
                 });
                 $('#printBtn').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
                     msg = 1;
-                    console.log(msg);
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
-                    //$('#msg').val('');
                 });
                 $('#column1').on('click', function (e) {
                     e.preventDefault();
@@ -96,7 +94,6 @@ html
                     test();
                 });
                 socket.onmessage = function (msg) {
-                    console.log("Daten:" + msg.data);
                     var data = JSON.parse(msg.data);
                     switch (data.type) {
                         case 'msg':
@@ -112,9 +109,7 @@ html
                             }
                             break;
                         case 'board':
-                            console.log("Print Board");
-                            console.log(data.msg);
-                            print(data.msg);
+                            printBoard(data.msg);
                             break;
                          case 'start':
                             printMessage(data.msg);
