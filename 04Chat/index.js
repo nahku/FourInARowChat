@@ -1,7 +1,8 @@
-var _grid;
+var _grid = [];
 var _currentUserID; //Spieler, der aktuell an der Reihe ist
 var _player1; //Spieler 1
 var _player2; //Spieler 2
+global._wait = 0;
 
 var express = require('express');
 
@@ -101,14 +102,24 @@ wss.on('request', function (request) {
                 var msg = '{"type": "msg", "name": "' + name + '", "msg":"' + data.msg + '"}';
                 break;
             case 'start':
-                initGame(1,2);
-                var msg = '{"type": "start", "name": "' + name + '", "msg":"' + data.msg + '"}';
+                if(initGame(name) == 0){
+                    var msg = '{"type": "error", "name": "' + name + '", "msg":"Bitte warten auf 2. Spieler"}';
+                }
+                else{
+                    var msg = '{"type": "start", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg":"' + data.msg + '", "msg2":"' + JSON.stringify(getGrid()) + '"}';
+                }
                 break;
             case 'board':
-                var tmp = JSON.stringify(getGrid());
-                tmp = tmp.split(":")
-                var msg = '{"type": "board", "name": "' + name + '", "msg": "' + tmp[1] + '"}';
+                if(setTile(data.msg,name)==0){
+                    var msg = '{"type": "error", "name": "' + name + '", "msg": "Ungültiger Zug, bitte erneut versuchen"}';
+                } else {
+                    var msg = '{"type": "board", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg": "' + JSON.stringify(getGrid()) + '"}';
+                }
                 break;
+            /*case 'setTile':
+                setTile(data.msg, name);
+                var msg = '{"type": "setTile", "name": "' + name + '", "msg": "Nächster Spieler"}';
+                break;*/
         }
 
         for (var key in connections) {
@@ -119,12 +130,19 @@ wss.on('request', function (request) {
     });
 });
 
-function initGame(player1, player2){
-  //je nachdem wer startet ggf. Anfangsspieler auslosen
-  _currentUserID = 1;
-  _player1 = player1;
-  _player2 = player2;
-  this._grid = new Grid ();
+function initGame(player){
+
+if(_wait == 0){
+  this._player1 = player;
+  _wait++;
+  return 0;
+}else{
+    this._player2 = player;
+    this._grid = new Grid ();
+    _wait = 0;
+    return 1;
+}
+
 }
 
 /*app.post('/setTile', function (req, res) {
@@ -182,14 +200,14 @@ function Grid(){
             board[i][j] = 0;
         }
     }
-    this._grid = board;
+
 
    /*Grid.prototype.getGrid = function(){
 
       return this._grid;
     }*/
 
-    Grid.prototype.setTile = function (column, player){
+    /*Grid.prototype.setTile = function (column, player){
 
       let xMax = 6;
       var set;
@@ -205,7 +223,9 @@ function Grid(){
             break;
           };
       }
-    }
+    }*/
+
+    return board;
 }
 
 function getGrid(){
@@ -214,20 +234,35 @@ function getGrid(){
 
 }
 
-function set(column, player){
+function setTile(column, player){
+ 
+  if(column>0 && column<8){
+        var set;
+        if (player == 'u1'){
+            set = 1;
+        } else if (player == 'u2'){
+            set = 2;
+        }
+        for (let i=5; i>=0; i--) {
+            
+            if (this._grid[i][column-1] == 0){
+                this._grid[i][column-1] = set; 
+                return 1;
+            }
+        }
+    }
 
-  let xMax = 6;
-  var set;
-  if (player == 'u1'){
-    set = 1;
-  } else if (player == 'u2'){
-    set = 2;
-  }
-  for (let i=5; i>=0; i--) {
-      
-      if (this._grid[i][column-1] == 0){
-        this._grid[i][column-1] = set; 
-        break;
-      };
-  }
+  return 0;
 }
+
+function getPlayer1(){
+
+    return this._player1;
+  
+  }
+
+function getPlayer2(){
+
+    return this._player2;
+  
+  }
