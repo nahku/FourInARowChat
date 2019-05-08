@@ -6,47 +6,9 @@ html
         div(style="width:500px; text-align:right;")
             a(href="/logout") Logout
         div#msgs(style="height:400px; width:400px; overflow: scroll; float:left; display:inline;")
-        div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
+        div#menu(style="height:10px; width:400px; float:right; display:inline;")
             button#startGame Start Game
             button#printBtn Print
-            script.
-                let count = 0;
-            
-                function printBoard(msg) {
-
-                    var row = $('<div></div>');
-                        $('#game').append(row);
-                        
-                    for (let i=1; i<48; i++) {
-
-                    if(count == 7){
-                        var row = $('<div></div>');
-                        $('#game').append(row);
-                        count = 0; 
-                        i++;
-                    }
-
-                    var tile = $('<span>' + msg[i*2] + ' </span>');
-                    $('#game').append(tile);
-
-                    count++;
-                    }
-
-                    var row = $('<div>--------------</div>');
-                    $('#game').append(row);
-
-                    for (let i=1; i<8; i++) {
-                        var column = $('<span>' + i + ' </span>');
-                        $('#game').append(column);
-                    }
-                }
-
-                function printMessage(msg){
-                    
-                    var msg = $('<div> Gamemaster: ' + msg +
-                                    '</div>');
-                            $('#msgs').append(msg);
-                }
             button#column1 1
             button#column2 2
             button#column3 3
@@ -54,6 +16,49 @@ html
             button#column5 5
             button#column6 6
             button#column7 7
+            div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
+                script.
+                
+                    function printBoard(msg) {
+
+                        $('#game').empty();
+
+                        let count = 0;
+
+                        var row = $('<div></div>');
+                            $('#game').append(row);
+                            
+                        for (let i=1; i<48; i++) {
+
+                        if(count == 7){
+                            var row = $('<div></div>');
+                            $('#game').append(row);
+                            count = 0; 
+                            i++;
+                        }
+
+                        var tile = $('<span>' + msg[i*2] + ' </span>');
+                        $('#game').append(tile);
+
+                        count++;
+                        }
+
+                        var row = $('<div>--------------</div>');
+                        $('#game').append(row);
+
+                        for (let i=1; i<8; i++) {
+                            var column = $('<span>' + i + ' </span>');
+                            $('#game').append(column);
+                        }
+                    }
+
+                    function printMessage(msg){
+                        
+                        var msg = $('<div> Gamemaster: ' + msg +
+                                        '</div>');
+                                $('#msgs').append(msg);
+                    }
+        
 
         div#users(style="height:400px; width:100px; overflow: scroll; float;")
         form#chatForm
@@ -81,17 +86,14 @@ html
                 $('#printBtn').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
-                    msg = 1;
+                    msg = 0;
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                 });
                 $('#column1').on('click', function (e) {
                     e.preventDefault();
-                    setTile(1, '#{user}');
                     var name = '#{user}',
-                    msg = getGrid();
+                    msg = '1';
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
-                    //$('#msg').val('');
-                    test();
                 });
                 socket.onmessage = function (msg) {
                     var data = JSON.parse(msg.data);
@@ -109,11 +111,20 @@ html
                             }
                             break;
                         case 'board':
-                            printBoard(data.msg);
+                            if(data.name1 == '#{user}' || data.name2 == '#{user}'){
+                                printBoard(data.msg);
+                            }
                             break;
                          case 'start':
-                            printMessage(data.msg);
+                            if(data.name1 == '#{user}' || data.name2 == '#{user}'){
+                                printMessage(data.msg);
+                                printBoard(data.msg2);
+                            }
                             break;
+                        case 'error':
+                            if(data.name == '#{user}'){
+                                printMessage(data.msg);
+                            }
 
                     }
                 };
