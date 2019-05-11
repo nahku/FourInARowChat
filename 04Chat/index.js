@@ -1,7 +1,8 @@
-var _grid = [];
+global._grid = null;
 var _currentUserID; //Spieler, der aktuell an der Reihe ist
 var _player1; //Spieler 1
 var _player2; //Spieler 2
+var _errorMessage;
 var _Message;
 global._wait = 0;
 
@@ -40,8 +41,9 @@ app.post('/login', function (req, res) {
         req.session.user = 'u1';
     } else if (user === 'u2' && pw === 'test') {
         req.session.user = 'u2';
+    } else if (user === 'u3' && pw === 'test') {
+        req.session.user = 'u3';
     }
-
     res.redirect('/chat');
 });
 
@@ -112,9 +114,9 @@ wss.on('request', function (request) {
                 break;
             case 'board':
                 if(setTile(data.msg,name)==1){
-                    var msg = '{"type": "board", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg": "' + JSON.stringify(getGrid()) + '", "msg2":"Spieler ' + getCurrentUserID() + ' an der Reihe"}';
+                    var msg = '{"type": "board", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg": "' + JSON.stringify(getGrid()) + '", "msg2":"' + getMessage()+'"}';
                 } else {
-                    var msg = '{"type": "error", "name": "' + name + '", "msg": "'+ getMessage() +'"}';   
+                    var msg = '{"type": "error", "name": "' + name + '", "msg": "'+ getErrorMessage() +'"}';   
                 }
                 break;
             /*case 'setTile':
@@ -139,16 +141,17 @@ if(_wait == 0){
   return 0;
 }else{
     //Prüfe, ob Player1 gegen sich selbst spielt 
-    if(this._player1 == player){
+   /* if(this._player1 == player){
         return 0;
-    }else{
+   */// }else{
         this._player2 = player;
         this._grid = new Grid ();
         _wait = 0;
         this._currentUserID = this._player1; //Spieler 1 beginnt
         return 1;
-    }
+    //}
 }
+
 
 }
 
@@ -189,23 +192,26 @@ if(this._currentUserID == player){ //Prüfe, ob Spieler an der Reihe ist
             if (this._grid[i][column-1] == 0){
                 this._grid[i][column-1] = set;
 
-                if(checkGameOver()==this._currentUserID){
+                if(checkGameOver()==set){
                     this._Message = 'Spieler ' + this._currentUserID + ' hat gewonnen';
-                    return 0; 
+                    return 1; 
                 }
 
                 switch(this._currentUserID){
                     case this._player1: this._currentUserID = this._player2; break;
                     case this._player2: this._currentUserID = this._player1; break;
                 } 
+
+                this._Message = 'Spieler ' + this._currentUserID + ' an der Reihe';
+
                 return 1;
             }
         }
     //}
-    this._Message = 'Ungültiger Zug, bitte erneut versuchen';
+    this._errorMessage = 'Ungültiger Zug, bitte erneut versuchen';
     return 0;
 }
-    this._Message = 'Sie sind nicht an der Reihe';
+    this._errorMessage = 'Sie sind nicht an der Reihe';
     return 0;
 }
 
@@ -233,6 +239,12 @@ function getMessage(){
   
   }
 
+function getErrorMessage(){
+
+    return this._errorMessage;
+  
+  }
+
 function checkGameOver() {
 	var flag;
 	flag = checkVerticalGameOver();
@@ -257,15 +269,14 @@ function checkGameOver() {
 }
 
 function checkVerticalGameOver(){
-	var grid = this._grid;
-	//hier geändert column 7 statt 6
-	for (let column=0; column<7; column++){
-        for (let offset=0; offset<3; offset++) {
+
+	for (let row=0; row<6; row++){
+        for (let column=0; column<4; column++) {
             var flag = true;
-			var lowestPlayerTile = grid[column][offset];
+			var lowestPlayerTile = this._grid[row][column];
 			if (lowestPlayerTile != 0){
 				for (let i=1; i<4; i++){
-					if (lowestPlayerTile != grid[column][i+offset]){
+					if (lowestPlayerTile != this._grid[row][column+i]){
 						flag = false;
 						break;
 					}
@@ -282,15 +293,13 @@ function checkVerticalGameOver(){
 
 function checkHorizontalGameOver(){
   
-	//var grid = this._grid;
-	//hier geändert column 7 statt 6
 	for (let column=0; column<7; column++){
-        for (let offset=0; offset<4; offset++) {
+        for (let row=0; row<3; row++) {
             var flag = true;
-			var lowestPlayerTile = this._grid[offset][column];
+			var lowestPlayerTile = this._grid[row][column];
 			if (lowestPlayerTile != 0){
 				for (let i=1; i<4; i++){
-					if (lowestPlayerTile != this._grid[offset+i][column]){
+					if (lowestPlayerTile != this._grid[row+1][column]){
 						flag = false;
 						break;
 					}
@@ -306,8 +315,8 @@ function checkHorizontalGameOver(){
 }
 
 function checkDiagonalGameOver(){
-	console.log(this._grid);
-	
+    
+    //Diagonal right
 	for (let offsetHorizontal=0; offsetHorizontal<4; offsetHorizontal++){
         for (let offsetVertical=0; offsetVertical<4; offsetVertical++) {
             var flag = true;
@@ -325,14 +334,14 @@ function checkDiagonalGameOver(){
 			}
         }
     }
-	//Hier wurde geändert
-	for (let offsetHorizontal=3; offsetHorizontal<6; offsetHorizontal++){
-        for (let offsetVertical=0; offsetVertical<3; offsetVertical++) {
+	//Diagonal left
+	for (let offsetHorizontal=0; offsetHorizontal<3; offsetHorizontal++){
+        for (let offsetVertical=6; offsetVertical>2; offsetVertical--) {
             var flag = true;
 			var lowestPlayerTile = this._grid[offsetHorizontal][offsetVertical];
 			if (lowestPlayerTile != 0){
 				for (let i=1; i<4; i++){
-					if (lowestPlayerTile != this._grid[offsetHorizontal-i][offsetVertical+i]){
+					if (lowestPlayerTile != this._grid[offsetHorizontal+i][offsetVertical-i]){
 						flag = false;
 						break;
 					}

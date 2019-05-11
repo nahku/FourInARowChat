@@ -9,16 +9,25 @@ html
         div#menu(style="height:10px; width:400px; float:right; display:inline;")
             button#startGame Start Game
             //button#printBtn Print
-            button#column1 1
+            button#column1 1 
             button#column2 2
             button#column3 3
             button#column4 4
             button#column5 5
             button#column6 6
             button#column7 7
-            div#game(style="height:400px; width:400px; overflow: scroll; float:right; display:inline;")
-                script.
+            div#game(style="height:300px; width:400px; overflow: scroll; float:right; display:inline;")
                 
+                script.
+
+                    $("#column1").attr("disabled", true);
+                    $("#column2").attr("disabled", true);
+                    $("#column3").attr("disabled", true);
+                    $("#column4").attr("disabled", true);
+                    $("#column5").attr("disabled", true);
+                    $("#column6").attr("disabled", true);
+                    $("#column7").attr("disabled", true);
+
                     function printBoard(msg) {
 
                         $('#game').empty();
@@ -36,8 +45,14 @@ html
                             count = 0; 
                             i++;
                         }
-
-                        var tile = $('<span>' + msg[i*2] + ' </span>');
+                        
+                        if(msg[i*2]==1){
+                            var tile = $('<span style="color:red">' + msg[i*2] + ' </span>');
+                        }else if(msg[i*2]==2){
+                            var tile = $('<span style="color:#00FF00">' + msg[i*2] + ' </span>');
+                        }else{
+                            var tile = $('<span>' + msg[i*2] + ' </span>');
+                        }
                         $('#game').append(tile);
 
                         count++;
@@ -52,13 +67,22 @@ html
                         }
                     }
 
-                    function printMessage(msg){
+                    /*function printMessage(msg){
                         
                         var msg = $('<div> Gamemaster: ' + msg +
                                         '</div>');
                                 $('#msgs').append(msg);
-                    }
-        
+                    }*/
+
+            div#gameMsg(style="height:100px; width:400px; float:right; display:inline;")
+                    script.
+
+                     function printMessage(msg){
+                        $('#gameMsg').empty();
+                        var msg = $('<div> Gamemaster: ' + msg +
+                                        '</div>');
+                                $('#gameMsg').append(msg);
+                     }
 
         div#users(style="height:400px; width:100px; overflow: scroll; float;")
         form#chatForm
@@ -79,6 +103,14 @@ html
                 });
                 $('#startGame').on('click', function (e) {
                     e.preventDefault();
+                    $("#column1").attr("disabled", false);
+                    $("#column2").attr("disabled", false);
+                    $("#column3").attr("disabled", false);
+                    $("#column4").attr("disabled", false);
+                    $("#column5").attr("disabled", false);
+                    $("#column6").attr("disabled", false);
+                    $("#column7").attr("disabled", false);
+                    $("#startGame").attr("disabled", true);
                     var name = '#{user}',
                     msg = 'Start new Game';
                     socket.send('{"type": "start", "msg": "' + msg + '"}');
@@ -151,6 +183,16 @@ html
                             if(data.name1 == '#{user}' || data.name2 == '#{user}'){
                                 printMessage(data.msg2);
                                 printBoard(data.msg);
+                                if(data.msg2.includes("gewonnen")){
+                                    $("#column1").attr("disabled", true);
+                                    $("#column2").attr("disabled", true);
+                                    $("#column3").attr("disabled", true);
+                                    $("#column4").attr("disabled", true);
+                                    $("#column5").attr("disabled", true);
+                                    $("#column6").attr("disabled", true);
+                                    $("#column7").attr("disabled", true);
+                                    $("#startGame").attr("disabled", false);
+                                }
                             }
                             break;
                          case 'start':
