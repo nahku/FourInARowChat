@@ -2,6 +2,7 @@ var _grid = [];
 var _currentUserID; //Spieler, der aktuell an der Reihe ist
 var _player1; //Spieler 1
 var _player2; //Spieler 2
+var _Message;
 global._wait = 0;
 
 var express = require('express');
@@ -106,14 +107,14 @@ wss.on('request', function (request) {
                     var msg = '{"type": "error", "name": "' + name + '", "msg":"Bitte warten auf 2. Spieler"}';
                 }
                 else{
-                    var msg = '{"type": "start", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg":"' + data.msg + '", "msg2":"' + JSON.stringify(getGrid()) + '"}';
+                    var msg = '{"type": "start", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg":"' + data.msg + '", "msg2":"' + JSON.stringify(getGrid()) + '", "msg3":"Spieler ' + getCurrentUserID() + ' beginnt"}';
                 }
                 break;
             case 'board':
-                if(setTile(data.msg,name)==0){
-                    var msg = '{"type": "error", "name": "' + name + '", "msg": "Ungültiger Zug, bitte erneut versuchen"}';
+                if(setTile(data.msg,name)==1){
+                    var msg = '{"type": "board", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg": "' + JSON.stringify(getGrid()) + '", "msg2":"Spieler ' + getCurrentUserID() + ' an der Reihe"}';
                 } else {
-                    var msg = '{"type": "board", "name1": "' + getPlayer1() + '", "name2": "' + getPlayer2() + '", "msg": "' + JSON.stringify(getGrid()) + '"}';
+                    var msg = '{"type": "error", "name": "' + name + '", "msg": "'+ getMessage() +'"}';   
                 }
                 break;
             /*case 'setTile':
@@ -137,55 +138,20 @@ if(_wait == 0){
   _wait++;
   return 0;
 }else{
-    this._player2 = player;
-    this._grid = new Grid ();
-    _wait = 0;
-    return 1;
-}
-
-}
-
-/*app.post('/setTile', function (req, res) {
-    var position = req.body.position,
-        userID = req.body.userID;
-
-    if(_currentUserID != userID){
-      //sende Client Nachricht, dass anderer Spieler dran ist
-
+    //Prüfe, ob Player1 gegen sich selbst spielt 
+    if(this._player1 == player){
+        return 0;
+    }else{
+        this._player2 = player;
+        this._grid = new Grid ();
+        _wait = 0;
+        this._currentUserID = this._player1; //Spieler 1 beginnt
+        return 1;
     }
-    else{
-      do{
-          var correct = grid.setTile(position, userID);
-          if(!correct){
-            //neue Position von Spieler anfordern
-          }
-      }while(!correct);
-
-      //sende aktualisiertes Spielfeld an Clients
-      //check
-      if(_grid.checkGameOver()){
-        //sende an clients Winner Player mit userID
-      }
-      //sende anderem Spieler, er nun an der Reihe
-    }
-});
-
-function checkGameOver() {
+}
 
 }
 
-function checkVerticalGameOver(){
-
-}
-
-function checkHorizontalGameOver(){
-
-}
-
-function checkDiagonalGameOver(){
-
-}
-*/
 function Grid(){
 
     let yMax = 7;
@@ -200,31 +166,6 @@ function Grid(){
             board[i][j] = 0;
         }
     }
-
-
-   /*Grid.prototype.getGrid = function(){
-
-      return this._grid;
-    }*/
-
-    /*Grid.prototype.setTile = function (column, player){
-
-      let xMax = 6;
-      var set;
-      if (player == 'u1'){
-        set = 1;
-      } else if (player == 'u2'){
-        set = 2;
-      }
-      for (let i=5; i>=0; i--) {
-          
-          if (this._grid[i][column-1] == 0){
-            this._grid[i][column-1] = set; 
-            break;
-          };
-      }
-    }*/
-
     return board;
 }
 
@@ -235,24 +176,37 @@ function getGrid(){
 }
 
 function setTile(column, player){
- 
-  if(column>0 && column<8){
+
+if(this._currentUserID == player){ //Prüfe, ob Spieler an der Reihe ist
+  //if(column>0 && column<8){ //Prüfe, ob gültiger Zug
         var set;
-        if (player == 'u1'){
-            set = 1;
-        } else if (player == 'u2'){
-            set = 2;
+        switch (this._currentUserID){
+            case this._player1: set = 1; break;
+            case this._player2: set = 2; break;
         }
         for (let i=5; i>=0; i--) {
             
             if (this._grid[i][column-1] == 0){
-                this._grid[i][column-1] = set; 
+                this._grid[i][column-1] = set;
+
+                if(checkGameOver()==this._currentUserID){
+                    this._Message = 'Spieler ' + this._currentUserID + ' hat gewonnen';
+                    return 0; 
+                }
+
+                switch(this._currentUserID){
+                    case this._player1: this._currentUserID = this._player2; break;
+                    case this._player2: this._currentUserID = this._player1; break;
+                } 
                 return 1;
             }
         }
-    }
-
-  return 0;
+    //}
+    this._Message = 'Ungültiger Zug, bitte erneut versuchen';
+    return 0;
+}
+    this._Message = 'Sie sind nicht an der Reihe';
+    return 0;
 }
 
 function getPlayer1(){
@@ -266,3 +220,129 @@ function getPlayer2(){
     return this._player2;
   
   }
+
+function getCurrentUserID(){
+
+    return this._currentUserID;
+  
+  }
+
+function getMessage(){
+
+    return this._Message;
+  
+  }
+
+function checkGameOver() {
+	var flag;
+	flag = checkVerticalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
+	
+	flag = checkHorizontalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
+	
+	flag = checkDiagonalGameOver();
+	
+	if(flag != 0){
+		return flag;
+	}
+	
+	return 0;
+}
+
+function checkVerticalGameOver(){
+	var grid = this._grid;
+	//hier geändert column 7 statt 6
+	for (let column=0; column<7; column++){
+        for (let offset=0; offset<3; offset++) {
+            var flag = true;
+			var lowestPlayerTile = grid[column][offset];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != grid[column][i+offset]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
+
+	return 0;
+}
+
+function checkHorizontalGameOver(){
+  
+	//var grid = this._grid;
+	//hier geändert column 7 statt 6
+	for (let column=0; column<7; column++){
+        for (let offset=0; offset<4; offset++) {
+            var flag = true;
+			var lowestPlayerTile = this._grid[offset][column];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != this._grid[offset+i][column]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
+
+	return 0;
+}
+
+function checkDiagonalGameOver(){
+	console.log(this._grid);
+	
+	for (let offsetHorizontal=0; offsetHorizontal<4; offsetHorizontal++){
+        for (let offsetVertical=0; offsetVertical<4; offsetVertical++) {
+            var flag = true;
+			var lowestPlayerTile = this._grid[offsetHorizontal][offsetVertical];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != this._grid[offsetHorizontal+i][offsetVertical+i]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
+	//Hier wurde geändert
+	for (let offsetHorizontal=3; offsetHorizontal<6; offsetHorizontal++){
+        for (let offsetVertical=0; offsetVertical<3; offsetVertical++) {
+            var flag = true;
+			var lowestPlayerTile = this._grid[offsetHorizontal][offsetVertical];
+			if (lowestPlayerTile != 0){
+				for (let i=1; i<4; i++){
+					if (lowestPlayerTile != this._grid[offsetHorizontal-i][offsetVertical+i]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag == true){
+					return lowestPlayerTile;
+				}
+			}
+        }
+    }
+
+	return 0;
+}
