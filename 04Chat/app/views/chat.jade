@@ -8,7 +8,7 @@ html
         div#msgs(style="height:400px; width:400px; overflow: scroll; float:left; display:inline;")
         div#menu(style="height:10px; width:400px; float:right; display:inline;")
             button#startGame Start Game
-            button#printBtn Print
+            //button#printBtn Print
             button#column1 1
             button#column2 2
             button#column3 3
@@ -83,19 +83,56 @@ html
                     msg = 'Start new Game';
                     socket.send('{"type": "start", "msg": "' + msg + '"}');
                 });
-                $('#printBtn').on('click', function (e) {
+                /*$('#printBtn').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
                     msg = 0;
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
-                });
+                });*/
                 $('#column1').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
                     msg = '1';
                     socket.send('{"type": "board", "msg": "' + msg + '"}');
                 });
+                $('#column2').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '2';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
+                $('#column3').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '3';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
+                $('#column4').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '4';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
+                $('#column5').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '5';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
+                $('#column6').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '6';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
+                $('#column7').on('click', function (e) {
+                    e.preventDefault();
+                    var name = '#{user}',
+                    msg = '7';
+                    socket.send('{"type": "board", "msg": "' + msg + '"}');
+                });
                 socket.onmessage = function (msg) {
+                    console.log(msg.data);
                     var data = JSON.parse(msg.data);
                     switch (data.type) {
                         case 'msg':
@@ -112,6 +149,7 @@ html
                             break;
                         case 'board':
                             if(data.name1 == '#{user}' || data.name2 == '#{user}'){
+                                printMessage(data.msg2);
                                 printBoard(data.msg);
                             }
                             break;
@@ -119,6 +157,7 @@ html
                             if(data.name1 == '#{user}' || data.name2 == '#{user}'){
                                 printMessage(data.msg);
                                 printBoard(data.msg2);
+                                printMessage(data.msg3);
                             }
                             break;
                         case 'error':
