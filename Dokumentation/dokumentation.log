@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  29 APR 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  15 MAY 2019 12:00
 entering extended mode
 **./dokumentation.tex
 (dokumentation.tex
@@ -2359,25 +2359,77 @@ Package babel Info: Redefining ngerman shorthand "~
 Package acronym Info: Label `acro:LiDAR' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 7.
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 7.
+
 Package acronym Info: Label `acro:Radar' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 7.
+
+Package acronym Warning: Acronym `Radar' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `Radar' is not defined on input line 7.
+
 Package acronym Info: Label `acro:TOF' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
+
+Package acronym Warning: Acronym `TOF' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `TOF' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 8.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 9.
+
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 9.
 ("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 9.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 11.
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 13.
 
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 15.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 15.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 16.
+
 
 LaTeX Warning: Reference `cha:Evaluation' on page 1 undefined on input line 17.
 
 
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 17.
+
 )
+Overfull \hbox (1.77287pt too wide) in paragraph at lines 14--97
+\T1/lmr/m/n/13 (-20) Kapitel [] bein-hal-tet die Eva-lua-ti-on der im-ple-men-t
+ier-ten [][]-Objekterkennung
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2416,6 +2468,22 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 3.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 3.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 6.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 6.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 8.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 8.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 10.
 ) (content/Konzept.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 4.
@@ -2454,6 +2522,10 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 6.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 6.
 ) (content/Schlussbetrachtung.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 3.
@@ -2475,9 +2547,21 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 5.
+
 Package acronym Info: Label `acro:DBSCAN' newly defined as it shall be overridd
 en
 although it is yet undefined on input line 6.
+
+Package acronym Warning: Acronym `DBSCAN' is not defined on input line 6.
+
+
+Package acronym Warning: Acronym `DBSCAN' is not defined on input line 6.
+
+
+Package acronym Warning: Acronym `LiDAR' is not defined on input line 6.
+
 
 LaTeX Warning: Reference `sec:DBSCAN-Algorithmus_Epsilon' on page 6 undefined o
 n input line 6.
@@ -2485,6 +2569,9 @@ n input line 6.
 Package acronym Info: Label `acro:AABB' newly defined as it shall be overridden
 
 although it is yet undefined on input line 7.
+
+Package acronym Warning: Acronym `DBSCAN' is not defined on input line 9.
+
 
 LaTeX Warning: Reference `sec:Performance_impl' on page 6 undefined on input li
 ne 9.
@@ -2580,19 +2667,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 \openout1 = `dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50218 strings out of 492973
- 949900 string characters out of 3126691
- 1592365 words of memory out of 3000000
- 53149 multiletter control sequences out of 15000+200000
- 588933 words of font info for 94 fonts, out of 3000000 for 9000
+ 49227 strings out of 492973
+ 931474 string characters out of 3126691
+ 1580652 words of memory out of 3000000
+ 52164 multiletter control sequences out of 15000+200000
+ 588751 words of font info for 92 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  63i,12n,80p,9113b,2267s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
@@ -2606,9 +2690,9 @@ e1/public/lm/lmr12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/lm/lmri12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/lm/lmro12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on dokumentation.pdf (14 pages, 237556 bytes).
+Output written on dokumentation.pdf (14 pages, 237958 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 19599 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 19639 words of extra memory for PDF output out of 20736 (max. 10000000)
 
