@@ -7,8 +7,9 @@ var _Message;
 global._wait = 0;
 
 var express = require('express');
-
 var app = express();
+const mongoose = require('mongoose');
+
 
 var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
@@ -22,6 +23,37 @@ app.use('/js', express.static(__dirname + '/js'));
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'jade');
 
+// Connect to MongoDB
+mongoose
+  .connect(
+    'mongodb://mongo:27017/docker-node-mongo',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
+const User = require('./js/user');
+
+/*app.get('/', (req, res) => {
+  User.find()
+    .then(user => res.render('index', { user }))
+    .catch(err => res.status(404).json({ msg: 'No items found' }));
+});*/
+
+app.post('/user/register', function (req, res) {
+   
+    const newUser = new User({
+        name: req.body.username,
+        password: req.body.password
+    });
+
+    newUser.save().then(user => res.redirect('/'));
+});
+
+//const port = 3000;
+
+//app.listen(port, () => console.log('HIServer running...'));
+
 function checkAuth(req, res, next) {
     if (!req.session.user) {
         res.redirect('/');
@@ -31,6 +63,10 @@ function checkAuth(req, res, next) {
 
 app.get('/', function (req, res) {
     res.render('login');
+});
+
+app.post('/registerbtn', function (req, res) {
+    res.render('register');
 });
 
 app.post('/login', function (req, res) {
