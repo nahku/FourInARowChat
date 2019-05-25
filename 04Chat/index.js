@@ -35,9 +35,15 @@ mongoose
 const User = require('./js/user');
 
 /*app.get('/', (req, res) => {
-  User.find()
+    User.find()
     .then(user => res.render('index', { user }))
     .catch(err => res.status(404).json({ msg: 'No items found' }));
+
+    var query = { name: "hasi" };
+    User.find(query).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
 });*/
 
 app.post('/user/register', function (req, res) {
@@ -50,9 +56,9 @@ app.post('/user/register', function (req, res) {
     newUser.save().then(user => res.redirect('/'));
 });
 
-//const port = 3000;
+const port = 3000;
 
-//app.listen(port, () => console.log('HIServer running...'));
+app.listen(port, () => console.log('HIServer running...'));
 
 function checkAuth(req, res, next) {
     if (!req.session.user) {
@@ -69,7 +75,20 @@ app.post('/registerbtn', function (req, res) {
     res.render('register');
 });
 
+
 app.post('/login', function (req, res) {
+
+    var user = req.body.username;
+        pw = req.body.password;
+
+    User.find({
+        "name" : { user },
+        "password" : { pw }
+    })
+    .then(req.session.user = user, () => res.redirect('/chat'));
+    //res.redirect('/chat');
+ 
+  /*
     var user = req.body.username,
         pw = req.body.password;
 
@@ -80,7 +99,8 @@ app.post('/login', function (req, res) {
     } else if (user === 'u3' && pw === 'test') {
         req.session.user = 'u3';
     }
-    res.redirect('/chat');
+    
+    res.redirect('/chat');*/
 });
 
 app.get('/chat', checkAuth, function (req, res) {
@@ -105,7 +125,7 @@ app.get('/logout', function (req, res) {
 });
 
 
-app.listen(8080);
+//app.listen(8080);
 
 var WSS = require('websocket').server,
     http = require('http');
