@@ -34,16 +34,29 @@ mongoose
 
 const User = require('./js/user');
 
-/*app.get('/', (req, res) => {
+/*app.get('/', function(req, res, next){
     User.find()
-    .then(user => res.render('index', { user }))
+    .then(users => res.render('index', { users }))
     .catch(err => res.status(404).json({ msg: 'No items found' }));
 
-    var query = { name: "hasi" };
+    console.log(users);
+    /*var query = { name: "hasi" };
     User.find(query).toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
   });
+
+  router.get('/data.json', function(req, res, next) {
+    var db = req.db;
+    db.myCollection.find(function (err, docs) {
+        if(err) {
+            // Handle error
+        } else {
+            res.json({title: 'Data', 'mydata': docs});
+        }
+    });
+});
+
 });*/
 
 app.post('/user/register', function (req, res) {
@@ -52,8 +65,14 @@ app.post('/user/register', function (req, res) {
         name: req.body.username,
         password: req.body.password
     });
+    /*var dbo = res.db("docker-node-mongo");
+    dbo.myCollection.insertOne(newUser, function(err, res) {
+      if (err) throw err;
+      console.log("1 document inserted");
+      res.redirect('/');
+    })*/
 
-    newUser.save().then(user => res.redirect('/'));
+    newUser.save().then(() => res.redirect('/'));
 });
 
 const port = 3000;
@@ -81,11 +100,33 @@ app.post('/login', function (req, res) {
     var user = req.body.username;
         pw = req.body.password;
 
-    User.find({
+   /* User.query.byName = function(name){
+        return this.where({name: new RegExp(name, 'i')});
+    };*/
+
+    User.find({'name': new RegExp(user, 'i')},function(err, data){
+        var json = JSON.parse(data);
+        console.log(json.name); 
+        if(user == json.name)
+        {
+            res.redirect('/chat');
+        };
+    });
+    /*({
         "name" : { user },
         "password" : { pw }
-    })
-    .then(req.session.user = user, () => res.redirect('/chat'));
+    }, function(err, cursor){
+        if (err) throw err; 
+        console.log(cursor);
+        cursor.toArray(callback);
+        if (callback != null){
+            req.session.user = user;
+            res.redirect('/chat');
+        }
+
+        });
+    //.then(items => Auth(items, user), console.log(items))
+    //.catch(err => res.status(404).json({ msg: 'No User found' }));
     //res.redirect('/chat');
  
   /*
@@ -102,6 +143,13 @@ app.post('/login', function (req, res) {
     
     res.redirect('/chat');*/
 });
+
+function Auth(req, res, items, user) {
+    if (items != null) {
+        res.redirect('/chat');
+        req.session.user = user;
+    }
+}
 
 app.get('/chat', checkAuth, function (req, res) {
     res.render('chat', {user: req.session.user});
