@@ -90,7 +90,7 @@ html
             input#msg(type="text")
             button#sendBtn Send
             script.
-                var socket = new WebSocket('ws://localhost:8181/', 'chat');
+                var socket = new WebSocket('ws://192.168.99.100:8181/', 'chat');
                 socket.onopen = function () {
                     socket.send('{"type": "join", "name":"#{user}"}');
                 }
