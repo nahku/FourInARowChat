@@ -2,5 +2,8 @@
 
 %TODO: Einleitung überarbeiten
 \chapter{Implementierung}\label{cha:Implementierung}
-In diesem Kapitel wird die prototypische Implementierung des Konzepts der Objekterkennung, welches im vorherigen Kapitel beschrieben wurde, behandelt. Diese wird mit Matlab durchgeführt.
+
 \section{Spiellogik}\label{sec:Spiellogik}
+\section{Erkennung des Spielendes}\label{sec:GameOver}
+Es gibt zwei Szenarien, unter denen das Spiel zu Ende ist. Entweder gewinnt ein Spieler oder das Spiel endet unentschieden. Unentschieden ist das Spiel, wenn das Spielfeld komplett gefüllt ist, aber kein Spieler eine Reihe aus vier Steinen aufbauen konnte.
+Bei einem Gewinn sind drei verschiedene Szenarien zu unterscheiden. Eine Reihe aus vier Spielsteinen des gleichen Spielers kann horizontal, vertikal oder diagonal auftreten. Wenn die Reihe diagonal gebildet wird, kann noch zwischen von links unten nach rechts oben und von rechts unten nach links oben unterschieden werden. Alle diese Fälle müssen geprüft werden.
