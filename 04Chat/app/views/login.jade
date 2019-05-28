@@ -2,6 +2,7 @@ doctype html
 
 html
     head
+        script(src="/js/jquery.js")
         title Node.js Chat
     body
         form(action="login", method="post")
@@ -15,5 +16,8 @@ html
                 input(type="submit", value="Log in")
         form(action="registerbtn", method="post")
             div
-                input(type="submit", value="Register")
+                input(type="submit", value="Register", id="register")
+       
+
+
             
