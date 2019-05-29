@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  29 MAY 2019 22:00
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  29 MAY 2019 00:12
+>>>>>>> Bericht
 entering extended mode
 **./dokumentation.tex
 (dokumentation.tex
@@ -2650,7 +2654,11 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 Here is how much of TeX's memory you used:
  49200 strings out of 492973
  930804 string characters out of 3126691
+<<<<<<< HEAD
  1580613 words of memory out of 3000000
+=======
+ 1580611 words of memory out of 3000000
+>>>>>>> Bericht
  52135 multiletter control sequences out of 15000+200000
  591209 words of font info for 90 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -2666,7 +2674,11 @@ ype1/public/lm/lmr17.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/lm/lmri12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/lm/lmro12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/lm/lmssbx10.pfb>
+<<<<<<< HEAD
 Output written on dokumentation.pdf (16 pages, 264968 bytes).
+=======
+Output written on dokumentation.pdf (16 pages, 264770 bytes).
+>>>>>>> Bericht
 PDF statistics:
  255 PDF objects out of 1000 (max. 8388607)
  51 named destinations out of 1000 (max. 500000)
