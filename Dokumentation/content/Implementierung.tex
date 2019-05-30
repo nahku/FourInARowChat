@@ -7,3 +7,9 @@
 \section{Erkennung des Spielendes}\label{sec:GameOver}
 Es gibt zwei Szenarien, unter denen das Spiel zu Ende ist. Entweder gewinnt ein Spieler oder das Spiel endet unentschieden. Unentschieden ist das Spiel, wenn das Spielfeld komplett gefüllt ist, aber kein Spieler eine Reihe aus vier Steinen aufbauen konnte.
 Bei einem Gewinn sind drei verschiedene Szenarien zu unterscheiden. Eine Reihe aus vier Spielsteinen des gleichen Spielers kann horizontal, vertikal oder diagonal auftreten. Wenn die Reihe diagonal gebildet wird, kann noch zwischen von links unten nach rechts oben und von rechts unten nach links oben unterschieden werden. Alle diese Fälle müssen geprüft werden.
+
+\section{Nachrichtenfilterung}\label{sec:Nachrichtenfilter}
+Typischerweise werden bei einer Websocket-Anwendung allen Usern die eintreffenden Nachrichten angezeigt. Um dieses zu umgehen und nur den am Spiel beteiligten Spielern Spiel-relevante Nachrichten anzuzeigen, enthält die Nachricht die Namen der beiden am Spiel beteiligten Parteien. So kann der Client ermitteln, ob er am Spiel beteiligt ist und die Nachricht dann anzeigt oder nicht und die Nachricht ignoriert. 
+
+\section{Gleichzeitiges Spielen mehrerer Spieler}\label{sec:Multiplegames}
+Um es mehreren Spielern zu ermöglichen, gleichzeitig zu spielen, wird eine zweidimensionales Array genutzt. In einer Dimension sind jeweils ein Spielbrett, die zwei Spieler und den Spieler, der aktuell an der Reihe ist. In der anderen Dimension die verschiedenen Spiele. Sobald ein Spiel beendet wurde, werden die Daten aus dem Array mit dem Wert null belegt. Wenn ein neues Spiel begonnen wird, wird das durch das Array iteriert und die erste Position, die frei ist (also den Wert null hat) genutzt. Wenn keine freie Position gefunden werden konnte, wird ein neues Array erschaffen und angefügt. 

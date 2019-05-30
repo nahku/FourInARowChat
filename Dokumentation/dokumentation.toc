@@ -25,7 +25,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Docker}{2}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}MongoDB}{2}{section.2.4}
+\contentsline {section}{\numberline {2.4}MongoDB und Mongoose}{2}{section.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Konzept}{3}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -37,11 +37,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Erkennung des Spielendes}{4}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Projektabschluss, Fazit \& Ausblick}{5}{chapter.5}
+\contentsline {section}{\numberline {4.3}Nachrichtenfilterung}{4}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Fazit}{5}{section.5.1}
+\contentsline {section}{\numberline {4.4}Gleichzeitiges Spielen mehrerer Spieler}{4}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Ausblick}{5}{section.5.2}
+\contentsline {chapter}{\numberline {5}Projektabschluss, Fazit \& Ausblick}{6}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Fazit}{6}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Ausblick}{6}{section.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Literatur}{i}{chapter*.9}
 \defcounter {refsection}{0}\relax 
