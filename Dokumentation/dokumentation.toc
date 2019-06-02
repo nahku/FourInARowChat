@@ -31,15 +31,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Konzept}{4}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}\IeC {\"U}bersicht}{4}{section.3.1}
+\contentsline {section}{\numberline {3.1}Anforderungen}{4}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Login und Registrierung}{5}{section.3.2}
+\contentsline {section}{\numberline {3.2}\IeC {\"U}bersicht}{4}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Spiel}{6}{section.3.3}
+\contentsline {section}{\numberline {3.3}Login und Registrierung}{5}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Nachrichtenfilterung}{6}{section.3.4}
+\contentsline {section}{\numberline {3.4}Spiel}{6}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Gleichzeitiges Spielen mehrerer Spieler}{6}{section.3.5}
+\contentsline {section}{\numberline {3.5}Nachrichtenfilterung}{6}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Gleichzeitiges Spielen mehrerer Spieler}{6}{section.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Implementierung}{7}{chapter.4}
 \defcounter {refsection}{0}\relax 
