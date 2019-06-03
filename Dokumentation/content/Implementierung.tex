@@ -14,6 +14,8 @@ Folgendes Bild zeigt den Ablauf des Logins:
 
 
 \section{Spiellogik}\label{sec:Spiellogik}
+Der User kann das Spiel über einen Knopf starten. Nun muss er warten bis ein anderer User das Spiel ebenfalls startet. Nachdem das Spiel gestartet ist, kann der User, der momentan an der Reihe anhand von Knöpfen über halb des Spielfeldes wählen, in welche Reihe er setzen möchte. Falls das Setzen nicht möglich ist, da die Reihe voll ist, darf er erneut setzen. Wenn ein Spieler einen Stein setzen möchte, obwohl er nicht an der Reihe ist, wird dieser nicht gesetzt. Nach jedem Zug wird geprüft, ob das Spiel endet. Wenn ja, kann ein neues Spiel begonnen werden.
+
 \section{Erkennung des Spielendes}\label{sec:GameOver}
 Es gibt zwei Szenarien, unter denen das Spiel zu Ende ist. Entweder gewinnt ein Spieler oder das Spiel endet unentschieden. Unentschieden ist das Spiel, wenn das Spielfeld komplett gefüllt ist, aber kein Spieler eine Reihe aus vier Steinen aufbauen konnte.
 Bei einem Gewinn sind drei verschiedene Szenarien zu unterscheiden. Eine Reihe aus vier Spielsteinen des gleichen Spielers kann horizontal, vertikal oder diagonal auftreten. Wenn die Reihe diagonal gebildet wird, kann noch zwischen von links unten nach rechts oben und von rechts unten nach links oben unterschieden werden. Alle diese Fälle müssen geprüft werden.
