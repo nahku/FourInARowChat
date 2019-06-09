@@ -47,18 +47,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Datenbank, Login und Registrierung}{7}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Spiellogik}{8}{section.4.2}
+\contentsline {section}{\numberline {4.2}Spiellogik}{9}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Erkennung des Spielendes}{9}{section.4.3}
+\contentsline {section}{\numberline {4.3}Erkennung des Spielendes}{11}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Docker Compose}{9}{section.4.4}
+\contentsline {section}{\numberline {4.4}Docker Compose}{11}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Projektabschluss, Fazit \& Ausblick}{10}{chapter.5}
+\contentsline {chapter}{\numberline {5}Projektabschluss, Fazit \& Ausblick}{13}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Fazit}{10}{section.5.1}
+\contentsline {section}{\numberline {5.1}Fazit}{13}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Ausblick}{10}{section.5.2}
+\contentsline {section}{\numberline {5.2}Ausblick}{13}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{i}{chapter*.8}
+\contentsline {chapter}{\nonumberline Literatur}{i}{chapter*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Anhang}{ii}{chapter*.10}
+\contentsline {chapter}{\nonumberline Anhang}{ii}{chapter*.11}

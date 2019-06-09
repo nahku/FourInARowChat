@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.17)  2 JUN 2019 20:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.17)  8 JUN 2019 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2293,7 +2293,7 @@ Package babel Info: Redefining ngerman shorthand "~
 
 LaTeX Warning: Reference `fig:konzept' on page 4 undefined on input line 12.
 
-<images/uebersicht.jpg, id=123, 515.42563pt x 719.18687pt>
+<images/uebersicht.jpg, id=127, 515.42563pt x 719.18687pt>
 File: images/uebersicht.jpg Graphic file (type jpg)
 <use images/uebersicht.jpg>
 Package pdftex.def Info: images/uebersicht.jpg  used on input line 16.
@@ -2360,7 +2360,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 5.
-<images/login.jpg, id=137, 355.82938pt x 561.09625pt>
+<images/login.jpg, id=141, 355.82938pt x 561.09625pt>
 File: images/login.jpg Graphic file (type jpg)
 <use images/login.jpg>
 Package pdftex.def Info: images/login.jpg  used on input line 11.
@@ -2375,33 +2375,89 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 14.
 [7
 
-]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 16.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 16.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
+] (c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 18.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.83347> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 23.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 30.
 
 [8 <./images/login.jpg>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 23.
-) (./content/Schlussbetrachtung.tex
+(babel)             in language  on input line 54.
+<images/spiellogik.jpg, id=164, 259.46938pt x 710.655pt>
+File: images/spiellogik.jpg Graphic file (type jpg)
+<use images/spiellogik.jpg>
+Package pdftex.def Info: images/spiellogik.jpg  used on input line 59.
+(pdftex.def)             Requested size: 227.62209pt x 623.459pt.
+
+Overfull \vbox (9.39992pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 62.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 62.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 62.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 62.
+
+[9]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 63.
+
+Overfull \vbox (9.39992pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 66.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 66.
+
+[10 <./images/spiellogik.jpg>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 67.
+
+Overfull \vbox (9.39992pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 86.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 86.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 86.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 86.
+
+[11]) (./content/Schlussbetrachtung.tex
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -2413,7 +2469,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 3.
 
-[9]
+[12]
 chapter 5.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 3.
@@ -2436,7 +2492,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 124.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 124.
- [10
+ [13
 
 ]
 chapter without number
@@ -2553,24 +2609,26 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48271 strings out of 492649
- 907289 string characters out of 6133384
- 1573535 words of memory out of 5000000
- 51205 multiletter control sequences out of 15000+600000
- 592506 words of font info for 93 fonts, out of 8000000 for 9000
+ 48947 strings out of 492649
+ 914355 string characters out of 6133384
+ 1602648 words of memory out of 5000000
+ 51808 multiletter control sequences out of 15000+600000
+ 599973 words of font info for 104 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 63i,12n,80p,10400b,2267s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,93p,10400b,3387s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2018/tex
 mf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type
 1/public/lm/lmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12
 .pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/20
-18/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2018/texmf-dist/font
-s/type1/public/lm/lmro12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/
-lmssbx10.pfb>
-Output written on dokumentation.pdf (21 pages, 389595 bytes).
+18/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/lm/lmri12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
+ro12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/lm/lmtt10.pfb>
+Output written on dokumentation.pdf (24 pages, 522652 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 21785 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 25886 words of extra memory for PDF output out of 29859 (max. 10000000)
 
