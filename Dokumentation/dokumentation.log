@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  9 JUN 2019 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.10.14)  9 JUN 2019 23:10
 entering extended mode
 **./dokumentation.tex
 (dokumentation.tex
@@ -1967,17 +1967,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\engli
 sh.lbx"
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
-) (dokumentation.aux
-
-LaTeX Warning: Label `sec:MongoDB' multiply defined.
-
-
-LaTeX Warning: Label `lis:POST' multiply defined.
-
-
-LaTeX Warning: Label `lis:POST' multiply defined.
-
-)
+) (dokumentation.aux)
 \openout1 = `dokumentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -1994,13 +1984,15 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 22.
- ("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 22.
+
 ("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2227,21 +2219,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Users\Asaid\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-msb.c
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
- [2
-
-])
+))
 \tf@toc=\write9
 \openout9 = `dokumentation.toc'.
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 55.
+ [2
+
+]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 55.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2428,14 +2420,23 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 6.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 6.
+Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
+
+although it is yet undefined on input line 7.
+
+Package acronym Warning: Acronym `HTTP' is not defined on input line 7.
+
+
+Package acronym Warning: Acronym `HTTP' is not defined on input line 7.
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2448,16 +2449,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 \section
-             {MongoDB und Mongoose}\label{sec:MongoDB} [3
+l.14 
+      [3
 
-]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 14.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 14.
-)
-(content/Konzept.tex
+]) (content/Konzept.tex
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -2480,57 +2475,57 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 5.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 7.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 7.
 
-LaTeX Warning: Reference `fig:konzept' on page 5 undefined on input line 12.
+LaTeX Warning: Reference `fig:konzept' on page 5 undefined on input line 10.
 
 <images/uebersicht.jpg, id=134, 515.42563pt x 719.18687pt>
 File: images/uebersicht.jpg Graphic file (type jpg)
 <use images/uebersicht.jpg>
-Package pdftex.def Info: images/uebersicht.jpg  used on input line 16.
+Package pdftex.def Info: images/uebersicht.jpg  used on input line 14.
 (pdftex.def)             Requested size: 341.43312pt x 476.42062pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 18.
 [5
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 22.
+(babel)             in language  on input line 20.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 23.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 23.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 25.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 25.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 27.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 27.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 27.
 
 [6 <./images/uebersicht.jpg>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 30.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 30.
+(babel)             in language  on input line 28.
 ) (content/Implementierung.tex
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
@@ -2553,10 +2548,10 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 5.
-<images/login.jpg, id=148, 355.82938pt x 561.09625pt>
+<images/login.jpg, id=149, 355.82938pt x 561.09625pt>
 File: images/login.jpg Graphic file (type jpg)
 <use images/login.jpg>
-Package pdftex.def Info: images/login.jpg  used on input line 11.
+Package pdftex.def Info: images/login.jpg  used on input line 10.
 (pdftex.def)             Requested size: 227.62209pt x 358.92914pt.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 14.
@@ -2582,7 +2577,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.83347> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 23.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 22.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
@@ -2597,59 +2592,59 @@ Package babel Info: Redefining ngerman shorthand "~
 
 [9 <./images/login.jpg>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 54.
-<images/spiellogik.jpg, id=168, 259.46938pt x 710.655pt>
+(babel)             in language  on input line 48.
+<images/spiellogik.jpg, id=172, 259.46938pt x 710.655pt>
 File: images/spiellogik.jpg Graphic file (type jpg)
 <use images/spiellogik.jpg>
-Package pdftex.def Info: images/spiellogik.jpg  used on input line 59.
+Package pdftex.def Info: images/spiellogik.jpg  used on input line 52.
 (pdftex.def)             Requested size: 227.62209pt x 623.459pt.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 56.
 
 [10]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 63.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 63.
+(babel)             in language  on input line 57.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 60.
 
 [11 <./images/spiellogik.jpg>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 61.
 
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 77.
 
 [12]) (content/Schlussbetrachtung.tex
 Overfull \vbox (9.39992pt too high) has occurred while \output is active []
@@ -2770,21 +2765,18 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 \openout1 = `dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49901 strings out of 492973
- 938311 string characters out of 3126691
- 1618034 words of memory out of 3000000
- 52743 multiletter control sequences out of 15000+200000
+ 49907 strings out of 492973
+ 938381 string characters out of 3126691
+ 1617361 words of memory out of 3000000
+ 52751 multiletter control sequences out of 15000+200000
  599206 words of font info for 107 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 63i,12n,93p,9113b,3538s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,12n,93p,9113b,3390s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
 c}<C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
 2.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
@@ -2796,9 +2788,9 @@ e1/public/lm/lmro12.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/lm/lmssbx10.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/lm/lmtk10.pfb><C:/Users/Asaid/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dokumentation.pdf (23 pages, 534842 bytes).
+Output written on dokumentation.pdf (23 pages, 536525 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 25374 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 25366 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -4,19 +4,18 @@
 \chapter{Implementierung}\label{cha:Implementierung}
 \section{Datenbank, Login und Registrierung}\label{Datenbank}
 Zu Beginn verbindet sich der Server mit der Datenbank. Server und Datenbank können über einen definierten Port kommunizieren. Der Server kann mittels Datenbankabfragen auf die gespeicherten Daten zugreifen. Wenn sich ein neuer User registriert, sendet der Client dem Server den Usernamen und das Passwort. Der Server fordert nun von der Datenbank gespeicherte Daten an, die den Usernamen und das Passwort enthalten??. Wenn die Antwort der Datenbank ein leeres Objekt ist, ist noch kein User mit dem Usernamen und dem Passwort registriert und in der Datenbank wird ein neuer Eintrag erstellt. 
-
-Folgendes Bild zeigt den Ablauf des Logins:
+In der folgenden Abbildung \ref{fig:login} ist der Login-Prozess schematisch dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{images/login.jpg}
 \caption{Flussdiagramm des Loginprozesses}
+\label{fig:login}
 \end{figure}
 
-Im folgenden ist der Verbindungsaufbau mit der MongoDB gezeigt. In der URL ist die Portnummer des MongoDB-Container, über den die Verbindung aufgebaut wird, enthalten. Der darauffolgende Name ist der Name des Docker-Containers, aus dem die Datenbank aufgerufen wird.
+In folgenden Listing \ref{lis:mongodb} ist der Verbindungsaufbau mit der MongoDB gezeigt. In der URL ist die Portnummer des MongoDB-Container, über den die Verbindung aufgebaut wird, enthalten. Der darauffolgende Name ist der Name des Docker-Containers, aus dem die Datenbank aufgerufen wird.
 In der letzten Zeile wird das auf definierte Datenbankschema verwiesen. 
 
-\begin{lstlisting}[language=bash, caption={Verbindungsaufbau mit der MongoDB}, label=lis:POST]
-
+\begin{lstlisting}[language=bash, caption={Verbindungsaufbau mit der MongoDB}, label=lis:mongodb]
 mongoose
   .connect(
     'mongodb://mongo:27017/docker-node-mongo',
@@ -26,13 +25,10 @@ mongoose
   .catch(err => console.log(err));
 
 const User = require('./js/user');
-
 \end{lstlisting}
 
-In folgendem Schema ist definiert, was für Attribute das in der Datenbank gespeicherte Objekt besitzt. 
-
-\begin{lstlisting}[language=bash, caption={Datenschema in der MongoDB}, label=lis:POST]
-
+In Listing \ref{lis:mongodbSchema} ist das Datenschema der Daten definiert, die in der MongoDB gespeichert werden. Die User-Informationen bestehen in dieser Anwendung aus einem Nutzernamen und einem Passwort. Beides wird benötigt und darf nicht leer bleiben. Außerdem sind beide vom Datentyp String.
+\begin{lstlisting}[language=bash, caption={Datenschema in der MongoDB}, label=lis:mongodbSchema]
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -48,20 +44,18 @@ const UserSchema = new Schema({
 });
 
 module.exports = User = mongoose.model('User', UserSchema);
-
 \end{lstlisting}
-
 \section{Spiellogik}\label{sec:Spiellogik}
-Der User kann das Spiel über einen Knopf starten. Nun muss er warten bis ein anderer User das Spiel ebenfalls startet. Danach kann der User, der momentan an der Reihe ist, anhand von Knöpfen überhalb des Spielfeldes wählen, in welche Reihe er setzen möchte. Falls das Setzen nicht möglich ist, weil die Reihe schon voll ist, wird er zum erneuten setzen an einer anderen Stelle aufgefordert. Wenn ein Spieler einen Stein setzen möchte, obwohl er nicht an der Reihe ist, wird diese Operation nicht durchgeführt. Nach jedem Zug wird geprüft, ob das Spiel vorbei ist. Wenn dies der Fall ist, kann ein neues Spiel begonnen werden.
-
+Der User kann das Spiel über einen Knopf starten. Nun muss er warten bis ein anderer User das Spiel ebenfalls startet. Danach kann der User, der momentan an der Reihe ist, anhand von Knöpfen überhalb des Spielfeldes wählen, in welche Reihe er setzen möchte. Falls das Setzen nicht möglich ist, weil die Reihe schon voll ist, wird er zum erneuten setzen an einer anderen Stelle aufgefordert. Wenn ein Spieler einen Stein setzen möchte, obwohl er nicht an der Reihe ist, wird diese Operation nicht durchgeführt. Nach jedem Zug wird geprüft, ob das Spiel vorbei ist. Wenn dies der Fall ist, kann ein neues Spiel begonnen werden. Dieser Ablauf ist in Abbildung \ref{fig:spiellogik} im folgenden schematisch dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{images/spiellogik.jpg}
 \caption{Flussdiagramm des Spielablaufs}
+\label{fig:spiellogik}
 \end{figure}
 
 \section{Erkennung des Spielendes}\label{sec:GameOver}
-Es gibt zwei Szenarien, unter denen das Spiel zu Ende ist. Entweder gewinnt ein Spieler oder das Spiel endet unentschieden. Unentschieden ist das Spiel, wenn das Spielfeld komplett gefüllt ist, aber kein Spieler eine Reihe aus vier Steinen aufbauen konnte.
+Es gibt zwei Szenarien, unter denen das Spiel zu Ende ist. Entweder gewinnt ein Spieler oder das Spiel endet unentschieden. Unentschieden ist das Spiel, wenn das Spielfeld komplett gefüllt ist, aber kein Spieler eine Reihe aus vier Steinen aufbauen konnte.\\
 Bei einem Gewinn sind drei verschiedene Szenarien zu unterscheiden. Eine Reihe aus vier Spielsteinen des gleichen Spielers kann horizontal, vertikal oder diagonal auftreten. Wenn die Reihe diagonal gebildet wird, kann noch zwischen von links unten nach rechts oben und von rechts unten nach links oben unterschieden werden. Alle diese Fälle müssen geprüft werden.
 
 \section{Docker Compose}\label{sec:Docker-Compose}

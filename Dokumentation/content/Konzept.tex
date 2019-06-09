@@ -3,9 +3,7 @@
 %TODO: Einleitungen überarbeiten
 \chapter{Konzept}\label{cha:Konzept}
 \section{Anforderungen}\label{sec:Anforderungen}
--ermöglichen spielen von spiel mit 2 spielern
--gleichzeitiges chatten möglich
--spielsteine über knöpfe setzen
+Im Folgenden werden die Funktionalitäten erläutert, die die Anwendung besitzen soll. Hauptziel ist es, dass Nutzer, parallel zur Nutzung des Chats, ein 4-gewinnt-Spiel spielen können. Dabei spielen jeweils zwei Spieler gegeneinander. Vor der Teilnahme an dem Chat und einem Spiel sollen sich die Nutzer einloggen. Dafür soll eine Registrierungsmöglichkeit geschaffen werden und die Registrierungsdaten sollen in einer Datenbank gespeichert werden. Wenn ein Spieler ein Spiel starten möchte, so soll dieser mit dem nächsten Spieler spielen können, der auch ein Spiel starten möchte.
 \section{Übersicht}\label{sec:Übersicht}
 Die Anwendung besteht aus zwei verschiedenen Teilen, die beide mittels Docker deployt werden. 
 Der eine Teil beinhaltet die Chat-Anwendung und die Spiellogik, der andere beinhaltet eine MongoDB, welche zum Speichern der Benutzer-Login-Informationen verwendet wird.\\
@@ -20,7 +18,7 @@ Abbildung \ref{fig:konzept} beinhaltet eine Übersicht über die Komponenten der
 
 
 \section{Login und Registrierung}\label{sec:Login}
-Beim Login hat der User die Möglichkeit haben, sich zu registrieren oder sich direkt einzuloggen. 
+Beim Login hat der User die Möglichkeit haben, sich zu registrieren oder sich direkt einzuloggen. Die Login-Informationen werden bei der Registrierung in der MongoDB gespeichert. 
 
 \section{Spiel}\label{sec:Spiel}
 

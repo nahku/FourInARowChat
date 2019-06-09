@@ -6,6 +6,8 @@
 \section{Ausblick}\label{sec:Ausblick}
 Ein momentaner Schwachpunkt der Benutzerverwaltung ist, dass nicht vollständig erkannt wird, ob ein Benutzername schon existiert. Sobald der Username (z.B. test123) Teil eines schon bestehendes Usernames ist (z.B. test12345), kann dies nicht unterscheiden werden. Daher würde der Benutzername als schon vergeben klassifiziert werden. Die Registrierung wird also verweigert, obwohl der Username noch nicht exisitert. Durch eine genauere Prüfung der bereits existierenden Usernamen könnte dies verhindert werden.
 
+Außerdem werden die Passwörter der Nutzer momentan als Klartext in der MongoDB gespeichert. Für die Zukunft wäre es denkbar, die Passwörter verschlüsselt zu speichern. Dazu könnte man beispielsweise einen aus dem Nutzer-Passwort berechneten Hash-Code in der Datenbank speichern. Dies würde sich aus Gründen des Datenschutzes anbieten.
+
 Eine denkbare Erweiterung der Anwendung ist das Speichern des Spielstandes in der Datenbank. Zur Zeit ist das Spiel nur lokal zwischengespeichert und wird gelöscht, sobald das Spiel beendet ist, die Seite neu geladen wird oder der User sich ausloggt. Durch das Speichern des Spielstandes und des Spielfeldes in der Datenbank könnte auch bei einem erneuten Login das alte Spiel weitergespielt werden.
 
 Um die Anwendung intuitiver zu gestalten, können dem User beim Login und der Registrierung Bildschirmausgaben über den aktuellen Stand angezeigt werden. Diese Ausgaben könnten über eine fehlgeschlagene Anmeldung informieren. Aktuell wird bei einer fehlerhaften Anmeldung die Seite erneut geladen. 
