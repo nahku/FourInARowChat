@@ -2,6 +2,9 @@
 
 \chapter{Grundlagen und Stand der Technik}\label{cha:Grundlagen}
 \section{Node.JS}\label{sec:Node.JS}
+Node.JS ist eine JavaScript Plattform. Asynchron betrieben, benutzt non-blocking I/O, das bedeutet, dass andere Prozesse ausgeführt werden können, während eine Übertragung stattfindet. für skalierbare Netzwerkanwendungen, da kein Threading benutzt werden muss, serverseitig. Node.JS ist event-driven. Fast keine Funktion benutzt I/O-Signale direkt, deshalb kann kein Prozess blockiert werden, deshalb gut für skalierbare Systeme.
+% https://nodejs.org/en/about/
+
 
 \section{Websockets}\label{sec:Websockets}
 Websockets sind die Grundlage für die Chat-Anwendung. Der Vorteil von Websockets, gegenüber z. B. einem reinen \ac{HTTP}-Protokoll, liegt darin, dass die Verbindung vom Client nur ein Mal geöffnet werden muss. Dann kann der Server dem Client Informationen senden, ohne dafür eine neue Verbindung zu benötigen. Dies ist bei Chats wichtig, da jederzeit neue Nachrichten eintreffen können, die ohne Verzögerung an den Client weitergeleitet werden sollen. Müsste der Client dafür eine neue Verbindung einrichten, so würden die Nachrichten nicht ohne Zeitverzögerungen ankommen.
