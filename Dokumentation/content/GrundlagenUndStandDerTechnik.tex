@@ -2,9 +2,13 @@
 
 \chapter{Grundlagen und Stand der Technik}\label{cha:Grundlagen}
 \section{Node.JS}\label{sec:Node.JS}
-Node.JS ist eine JavaScript Plattform. Asynchron betrieben, benutzt non-blocking I/O, das bedeutet, dass andere Prozesse ausgeführt werden können, während eine Übertragung stattfindet. für skalierbare Netzwerkanwendungen, da kein Threading benutzt werden muss, serverseitig. Node.JS ist event-driven. Fast keine Funktion benutzt I/O-Signale direkt, deshalb kann kein Prozess blockiert werden, deshalb gut für skalierbare Systeme.
-% https://nodejs.org/en/about/
+Node.JS ist eine JavaScript Plattform, die JavaScript außerhalb des Browsers ausführt. Node.JS wird häufig serverseitig benutzt, um Daten zu Senden/zu Empfangen.
 
+Der Unterschied zwischen Node.JS und anderen Sprachen zur Serverprogrammierung liegt darin, dass Node.JS keinen neuen Thread für eine neue Request startet, sondern alle Request einen Single-Thread benutzten. Node.JS arbeitet asynchron und verarbeitet einen neu eintreffenden Befehl unmittelbar. Umgesetzt wird das mit nicht-blockierende I/O-Anfragen. Während des Wartens auf die Peripheriegeräte können andere Befehle ausgeführt werden. Ein weiterer Vorteil, der sich daraus erschließt, ist, dass keine Deadlocks auftreten können, weil Ressourcen nicht blockiert werden. Aus diesem Grund bietet sich Node.JS für skalierbare Netzwerkanwendungen an.
+
+Mit Hilfe des \acf{NPM} können zusätzliche Funktionalitäten in Node genutzt werden, ähnlich zu Bibliotheken in anderen Programmiersprachen.
+
+% https://nodejs.org/en/about/
 
 \section{Websockets}\label{sec:Websockets}
 Websockets sind die Grundlage für die Chat-Anwendung. Der Vorteil von Websockets, gegenüber z. B. einem reinen \ac{HTTP}-Protokoll, liegt darin, dass die Verbindung vom Client nur ein Mal geöffnet werden muss. Dann kann der Server dem Client Informationen senden, ohne dafür eine neue Verbindung zu benötigen. Dies ist bei Chats wichtig, da jederzeit neue Nachrichten eintreffen können, die ohne Verzögerung an den Client weitergeleitet werden sollen. Müsste der Client dafür eine neue Verbindung einrichten, so würden die Nachrichten nicht ohne Zeitverzögerungen ankommen.
