@@ -2,6 +2,7 @@
 
 \chapter{Projektabschluss, Fazit \& Ausblick}\label{cha:Schlussbetrachtung}
 \section{Fazit}\label{sec:Fazit}
+Das Ziel dieser Projektarbeit war die Entwicklung eines 4-gewinnt-Spiels auf Basis der in der Vorlesung vorgestellten Chat-Anwendung. Dazu wurde eine Anwendung entwickelt, die aus einem Client, einem Server und einer Datenbank besteht. Um die Echtzeitfähigkeit, die sowohl für den Chat als auch das Spiel benötigt wird, zu gewährleisten, wurde ein Websocket eingesetzt. Mit dieser Anwendung konnten alle Anforderungen, die in Kapitel \ref{cha:Einleitung} und Kapitel \ref{sec:Anforderungen} genannt wurden, erfüllt werden. //todo weiter schreiben
 
 \section{Ausblick}\label{sec:Ausblick}
 Ein momentaner Schwachpunkt der Benutzerverwaltung ist, dass nicht vollständig erkannt wird, ob ein Benutzername schon existiert. Sobald der Username (z.B. test123) Teil eines schon bestehendes Usernames ist (z.B. test12345), kann dies nicht unterscheiden werden. Daher würde der Benutzername als schon vergeben klassifiziert werden. Die Registrierung wird also verweigert, obwohl der Username noch nicht exisitert. Durch eine genauere Prüfung der bereits existierenden Usernamen könnte dies verhindert werden.

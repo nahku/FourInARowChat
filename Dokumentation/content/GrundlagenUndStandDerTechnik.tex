@@ -2,7 +2,7 @@
 
 \chapter{Grundlagen und Stand der Technik}\label{cha:Grundlagen}
 \section{Node.JS}\label{sec:Node.JS}
-Node.JS ist eine JavaScript Plattform, die JavaScript außerhalb des Browsers ausführt. Node.JS wird häufig serverseitig benutzt, um Daten zu Senden/zu Empfangen. \cite[vgl.]{Node.2019}
+Node.JS ist eine JavaScript Plattform, die JavaScript außerhalb des Browsers ausführt. Node.JS wird häufig serverseitig benutzt, um Daten zu Senden/zu Empfangen. \cite{Node.2019}
 
 Der Unterschied zwischen Node.JS und anderen Sprachen zur Serverprogrammierung liegt darin, dass Node.JS keinen neuen Thread für eine neue Request startet, sondern alle Request einen Single-Thread benutzten \cite[vgl.][3]{Holmes.2013}. Node.JS arbeitet asynchron und verarbeitet einen neu eintreffenden Befehl unmittelbar. Umgesetzt wird das mit nicht-blockierende I/O-Anfragen. Während des Wartens auf die Peripheriegeräte können andere Befehle ausgeführt werden. Ein weiterer Vorteil, der sich daraus erschließt, ist, dass keine Deadlocks auftreten können, weil Ressourcen nicht blockiert werden. Aus diesem Grund bietet sich Node.JS für skalierbare Netzwerkanwendungen an. \cite[vgl.][4]{Holmes.2013}
 
