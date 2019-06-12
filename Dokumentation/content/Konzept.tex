@@ -21,6 +21,7 @@ Abbildung \ref{fig:konzept} beinhaltet eine Übersicht über die Komponenten der
 Beim Login hat der User die Möglichkeit haben, sich zu registrieren oder sich direkt einzuloggen. Die Login-Informationen werden bei der Registrierung in der MongoDB gespeichert. 
 
 \section{Spiel}\label{sec:Spiel}
+Nachdem zwei Spieler ein Spiel begonnen haben, können sie gegeneinander spielen. Mittels Buttons kann ausgewählt werden, in welche Reihe sie setzen möchten. Hierbei muss überprüft werden, ob der Spieler überhaupt an der Reihe ist und ob die Reihe, in der der Stein gesetzt werden soll, nicht voll ist. Außerdem muss geprüft werden, ob es ein Spieler geschafft hat, vier Steine in eine vertikale, horizontale oder diagonale Reihe zu platzieren. Nachdem das Spiel entweder gewonnen oder unentschieden beendet wird, wir das aktuelle Spielfeld deaktiviert und es besteht die Möglichkeit, ein neues Spiel zu starten. Um dem Spieler Informationen über den Spielstand mitzuteilen, schickt ein sogenannter Gamemaster Nachrichten.  Diese Nachrichten werden wie die Chat-Nachrichten über den Websocket geschickt. 
 
 \section{Nachrichtenfilterung}\label{sec:Nachrichtenfilter}
 Typischerweise werden bei einer Websocket-Anwendung allen Usern die eintreffenden Nachrichten angezeigt. Um dies zu umgehen und nur den am Spiel beteiligten Spielern relevante Nachrichten anzuzeigen, enthält die Nachricht die Namen der beiden am Spiel beteiligten Parteien. So kann der Client ermitteln, ob er am Spiel beteiligt ist und aufgrund dessen, die Nachrichten anzeigen oder ignorieren. 
