@@ -2,24 +2,21 @@
 
 \chapter{Grundlagen und Stand der Technik}\label{cha:Grundlagen}
 \section{Node.JS}\label{sec:Node.JS}
-Node.JS ist eine JavaScript Plattform, die JavaScript außerhalb des Browsers ausführt. Node.JS wird häufig serverseitig benutzt, um Daten zu Senden/zu Empfangen. \cite{Node.2019}
+Node.JS ist eine JavaScript-Plattform, die JavaScript außerhalb des Browsers ausführt. Node.JS wird häufig serverseitig benutzt, um Daten zu Senden/zu Empfangen. \cite[vgl.][]{Node.2019}
 
-Der Unterschied zwischen Node.JS und anderen Sprachen zur Serverprogrammierung liegt darin, dass Node.JS keinen neuen Thread für eine neue Request startet, sondern alle Request einen Single-Thread benutzten \cite[vgl.][3]{Holmes.2013}. Node.JS arbeitet asynchron und verarbeitet einen neu eintreffenden Befehl unmittelbar. Umgesetzt wird das mit nicht-blockierende I/O-Anfragen. Während des Wartens auf die Peripheriegeräte können andere Befehle ausgeführt werden. Ein weiterer Vorteil, der sich daraus erschließt, ist, dass keine Deadlocks auftreten können, weil Ressourcen nicht blockiert werden. Aus diesem Grund bietet sich Node.JS für skalierbare Netzwerkanwendungen an. \cite[vgl.][4]{Holmes.2013}
-
-Mit Hilfe des \acf{NPM} können zusätzliche Funktionalitäten in Node genutzt werden, ähnlich zu Bibliotheken in anderen Programmiersprachen.
+Der Unterschied zwischen Node.JS und anderen Sprachen zur Serverprogrammierung liegt darin, dass Node.JS keinen neuen Thread für neue Requests startet, sondern alle Requests auf einem Single-Thread ausführt \cite[vgl.][3]{Holmes.2013}. Node.JS arbeitet asynchron und verarbeitet neu eintreffende Befehle unmittelbar. Umgesetzt wird das mit nicht-blockierenden I/O-Anfragen. Während des Wartens auf die Peripherie können andere Befehle ausgeführt werden. Ein weiterer Vorteil, der sich daraus ergibt, ist, dass keine Deadlocks auftreten können, weil Ressourcen nicht blockiert werden. Aus diesem Grund bietet sich Node.JS für skalierbare Netzwerkanwendungen an. \cite[vgl.][4]{Holmes.2013}\\
+Mit Hilfe des \acf{NPM} können Pakete installiert werden, die zusätzliche Funktionalitäten genutzt bieten. Dies Folgt einem ähnlichen Konzept wie Bibliotheken in anderen Programmiersprachen.
 
 \section{Websockets}\label{sec:Websockets}
-Websockets sind die Grundlage für die Chat-Anwendung. Der Vorteil von Websockets, gegenüber z. B. einem reinen \ac{HTTP}-Protokoll, liegt darin, dass die Verbindung vom Client nur ein Mal geöffnet werden muss. Dann kann der Server dem Client Informationen senden, ohne dafür eine neue Verbindung zu benötigen. Dies ist bei Chats wichtig, da jederzeit neue Nachrichten eintreffen können, die ohne Verzögerung an den Client weitergeleitet werden sollen. Müsste der Client dafür eine neue Verbindung einrichten, so würden die Nachrichten nicht ohne Zeitverzögerungen ankommen.
+Websockets sind die Grundlage für die Chat-Anwendung. Der Vorteil von Websockets, gegenüber z. B. einem reinen \ac{HTTP}-Protokoll, liegt darin, dass die Verbindung vom Client nur einmal geöffnet werden muss. Dann kann der Server dem Client Informationen senden, ohne dafür eine neue Verbindung zu benötigen. Dies ist bei Chats wichtig, da jederzeit neue Nachrichten eintreffen können, die ohne Verzögerung an den Client weitergeleitet werden sollen. Müsste der Client dafür eine neue Verbindung einrichten, so würden die Nachrichten nicht ohne Zeitverzögerungen ankommen.
 \section{Docker}\label{sec:Docker}
-Docker ist eine Software ... In dieser Projektarbeit wird Docker verwendet, um das einfache deployen der Anwendungen, unabhängig von den konkreten Servern zu ermöglichen. Docker ermöglicht es, Container auf Server zu deployen, und stellt dabei sicher, dass die Umgebung für die Software im Container so gleich bleibt, dass die Software genauso funktioniert, wie auf anderen Servern mit anderer Hardware. So kann Software allgemein, ohne Probleme beim Deployen auf verschiedene Server, entwickelt werden.
+In dieser Projektarbeit wird Docker verwendet, um das einfache deployen der Anwendungen, unabhängig von den konkreten Servern zu ermöglichen. Docker ermöglicht es, Container auf Server zu deployen, und stellt dabei sicher, dass die Umgebung für die Software im Container insoweit gleichbleibt, dass die Software genauso funktioniert, wie auf anderen Servern mit anderer Hardware. So kann Software allgemein, ohne Probleme beim Deployen auf verschiedene Server, entwickelt werden.\\ Ein Container-Image enthält eine ausführbare Software, einschließlich aller Abhängigkeiten, die zur Ausführung der Software benötigt werden. Ein auf der Docker-Engine ausgeführtes Container-Image wird als Container bezeichnet. Dadurch, dass alle zur Ausführung der Software benötigten Daten und Funktionen im Container-Image vorhanden sind, können die Container einfach auf verschiedene Server deployt werden, ohne dass es zu Problemen kommt. \cite[vgl.][]{Docker.2019}
 \section{MongoDB und Mongoose}\label{sec:MongoDB}
 In der Anwendung wird eine MongoDB zum Speichern der Zugangsdaten der Chat-Teilnehmer genutzt. MongoDB ist eine NoSQL-Datenbank. Im Gegensatz zu relationalen Datenbanken, ist MongoDB Dokumenten-orientiert \cite[vgl.][3]{Chadorow.2013}, es werden also Dokumente gespeichert. 
 Ein Dokument besteht aus einer Menge an Keys und Values. Dieser Aufbau der Datenbank bietet unter anderem eine
 besser Skalierbarkeit als relationale Datenbanken, da die Daten besser auf verschiedene Server aufgeteilt werden
 können \cite[vgl.][4]{Chadorow.2013}. Es gibt keine vorgegeben Schemas, die eingehalten werden müssen.
 
-Mongoose stellt eine Objekt-Daten-Modellierungs-Bibliothek für MongoDB und
-Node.JS zur Verfügung. Mit Mongoose kann das Datenschema der Datenbank im
-Node.JS-Code in JSON definiert werden. \cite[vgl.][10]{Holmes.2013}
+Mongoose stellt eine Objekt-Daten-Modellierungs-Bibliothek für MongoDB und Node.JS zur Verfügung. Mit Mongoose kann das Datenschema der Datenbank im Node.JS-Code in JSON definiert werden. \cite[vgl.][10]{Holmes.2013}
 
 

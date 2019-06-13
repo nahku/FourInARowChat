@@ -1,17 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is 'dokumentation.blg'
-[31] biber-MSWIN32:313> INFO - === 
-[65] Biber.pm:371> INFO - Reading 'dokumentation.bcf'
-[171] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
-[186] Biber.pm:3976> INFO - Processing section 0
-[199] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliographie.bib' for section 0
-[203] bibtex.pm:1500> INFO - LaTeX decoding ...
-[242] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliographie.bib'
-[278] Utils.pm:193> WARN - I didn't find a database entry for 'Docker.2019' (section 0)
-[286] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[287] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[287] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de_DE'
-[289] Biber.pm:3810> INFO - No sort tailoring available for locale 'de_DE'
-[298] bbl.pm:617> INFO - Writing 'dokumentation.bbl' with encoding 'UTF-8'
-[299] bbl.pm:720> INFO - Output to dokumentation.bbl
-[305] Biber.pm:110> INFO - WARNINGS: 1
+[1] Config.pm:305> INFO - Logfile is 'dokumentation.blg'
+[75] biber-MSWIN64:313> INFO - === 
+[186] Biber.pm:371> INFO - Reading 'dokumentation.bcf'
+[307] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
+[329] Biber.pm:3976> INFO - Processing section 0
+[368] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliographie.bib' for section 0
+[378] bibtex.pm:1500> INFO - LaTeX decoding ...
+[439] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliographie.bib'
+[564] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[565] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[565] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de_DE'
+[565] Biber.pm:3810> INFO - No sort tailoring available for locale 'de_DE'
+[601] bbl.pm:617> INFO - Writing 'dokumentation.bbl' with encoding 'UTF-8'
+[604] bbl.pm:720> INFO - Output to dokumentation.bbl

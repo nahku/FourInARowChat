@@ -82,25 +82,7 @@ return 0;
 }
 \end{lstlisting}
 \section{Docker Compose}\label{sec:Docker-Compose}
-Im Docker-Compose-File sind die zu verwaltenen Container mit den Portnummern, über die auf die Container zugegriffen werden kann, enthalten.
-
-In Listing \ref{lis:dockercompose} ist das Docker-Compose-File dieser Anwendung dargestellt.
-
-In der ersten Zeile wird das Docker-Compose-File-Format genannt. Version 3 ist die aktuelle Version. 
-
-In den folgenden Zeilen werden die einzelnen Services, also die einzelnen Docker-Container festgelegt.
-
-Der Container-Name in Zeile 4 beschreibt den Namen des Docker-Containers, der anstatt eines automatisch festgelegtem Namen benutzt wird.
-
-In Zeile 6 wird der Pfad hinterlegt, in dem das Docker-File hinterlegt ist, welches die build-Funktion spezifiziert. 
-
-"`Links"' in Zeile 10 benennt Links zu anderen Containern, in diesem Fall der mango-Container.
-
-Die Portnummern beschreiben die Abbildung von Container-internen auf externe Portnummern. Mit Hilfe der externen Portnummer auf der können die Docker-Container miteinander kommunizieren, bzw. mit den Docker-Containern von außen kommuniziert werden.
-
-In Zeile 14 ist der Name des erstellten Images festgelegt, aus dem der Container gestartet wird.  
-
-\cite{Docker.2019}
+In einem Docker-Compose-File sind die zu verwaltenen Container mit den Portnummern, über die auf die Container zugegriffen werden kann, enthalten. In Listing \ref{lis:dockercompose} ist das Docker-Compose-File dieser Anwendung dargestellt. In der ersten Zeile wird das Docker-Compose-File-Format genannt. Version 3 ist die aktuelle Version. In den folgenden Zeilen werden die einzelnen Services, also die einzelnen Docker-Container festgelegt. Der Container-Name in Zeile 4 beschreibt den Namen des Docker-Containers, der anstatt eines automatisch festgelegtem Namen benutzt wird. In Zeile 6 wird der Pfad hinterlegt, in dem das Docker-File hinterlegt ist, welches die build-Funktion spezifiziert. $Links$ in Zeile 10 benennt Links zu anderen Containern, in diesem Fall zu dem MongoDB-Container. Die Portnummern beschreiben die Abbildung von Container-internen auf externe Portnummern. Mit Hilfe der externen Portnummer können die Docker-Container miteinander kommunizieren, bzw. kann mit den Docker-Containern von außen kommuniziert werden. In Zeile 14 ist der Name des erstellten Images festgelegt, aus dem der Container gestartet wird.
 
 \begin{lstlisting}[language=bash, caption={docker-compose.yml-File}, label=lis:dockercompose]
 version: '3'
