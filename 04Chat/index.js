@@ -300,7 +300,7 @@ function setTile(column, player){
 
     var game = getGame(player);
 
-    if(this._gameManager[game][3] == player){     //Prüfe, ob Spieler an der Reihe ist
+    if(this._gameManager[game][3] == player){     //Prï¿½fe, ob Spieler an der Reihe ist
 
             var set;
             switch (this._gameManager[game][3]){
@@ -336,7 +336,7 @@ function setTile(column, player){
                 }
             }
       
-        this._errorMessage = 'Ungültiger Zug, bitte erneut versuchen';
+        this._errorMessage = 'Ungï¿½ltiger Zug, bitte erneut versuchen';
         return 0;
     }
         this._errorMessage = 'Sie sind nicht an der Reihe';
