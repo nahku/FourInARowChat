@@ -17,7 +17,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Grundlagen und Stand der Technik}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Node.JS}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Node.js}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Websockets}{3}{section.2.2}
 \defcounter {refsection}{0}\relax 
@@ -43,7 +43,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Datenbank, Login und Registrierung}{9}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Spiellogik}{12}{section.4.2}
+\contentsline {section}{\numberline {4.2}Spiellogik}{11}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Erkennung des Spielendes}{14}{section.4.3}
 \defcounter {refsection}{0}\relax 

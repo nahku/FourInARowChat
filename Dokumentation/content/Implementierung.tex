@@ -13,7 +13,7 @@ In der folgenden Abbildung \ref{fig:login} ist der Login-Prozess schematisch dar
 \end{figure}
 
 In folgenden Listing \ref{lis:mongodb} ist der Verbindungsaufbau mit der MongoDB gezeigt. In der URL ist die Portnummer des MongoDB-Container, über den die Verbindung aufgebaut wird, enthalten. Der darauffolgende Name ist der Name des Docker-Containers, aus dem die Datenbank aufgerufen wird.
-In der letzten Zeile wird das auf definierte Datenbankschema verwiesen. 
+In der letzten Zeile wird auf das definierte Datenbankschema verwiesen. 
 
 \begin{lstlisting}[language=bash, caption={Verbindungsaufbau mit der MongoDB}, label=lis:mongodb]
 mongoose
@@ -46,7 +46,7 @@ const UserSchema = new Schema({
 module.exports = User = mongoose.model('User', UserSchema);
 \end{lstlisting}
 \section{Spiellogik}\label{sec:Spiellogik}
-Der User kann das Spiel über einen Knopf starten. Nun muss er warten bis ein anderer User das Spiel ebenfalls startet. Danach kann der User, der momentan an der Reihe ist, anhand von Knöpfen überhalb des Spielfeldes wählen, in welche Reihe er setzen möchte. Falls das Setzen nicht möglich ist, weil die Reihe schon voll ist, wird er zum erneuten Setzen an einer anderen Stelle aufgefordert. Wenn ein Spieler einen Stein setzen möchte, obwohl er nicht an der Reihe ist, wird diese Operation nicht durchgeführt. Nach jedem Zug wird geprüft, ob das Spiel vorbei ist. Wenn dies der Fall ist, kann ein neues Spiel begonnen werden. Dieser Ablauf ist in Abbildung \ref{fig:spiellogik} im Folgenden schematisch dargestellt.
+Der User kann das Spiel über einen Knopf starten. Nun muss er warten bis ein anderer User das Spiel ebenfalls startet. Danach kann der User, der momentan an der Reihe ist, anhand von Knöpfen überhalb des Spielfeldes wählen, in welche Spalte er setzen möchte. Falls das Setzen nicht möglich ist, weil die Reihe schon voll ist, wird er zum erneuten Setzen an einer anderen Stelle aufgefordert. Wenn ein Spieler einen Stein setzen möchte, obwohl er nicht an der Reihe ist, wird diese Operation nicht durchgeführt. Nach jedem Zug wird geprüft, ob das Spiel vorbei ist. Wenn dies der Fall ist, kann ein neues Spiel begonnen werden. Dieser Ablauf ist in Abbildung \ref{fig:spiellogik} im Folgenden schematisch dargestellt.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{images/spiellogik.jpg}
