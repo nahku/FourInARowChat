@@ -97,23 +97,7 @@ app.get('/chat', checkAuth, function (req, res) {
     res.render('chat', {user: req.session.user});
 });
 
-//Nach dem Logout wird der User aus der aktuellen Session geloescht
-app.get('/logout', function (req, res) {
-    connections[req.session.user].close();
-    delete connections[req.session.user];
-
-    delete req.session.user;
-
-    var msg = '{"type": "join", "names": ["' +
-        Object.keys(connections).join('","') + '"]}';
-
-    for (var key in connections) {
-        if (connections[key] && connections[key].send) {
-            connections[key].send(msg);
-        }
-    }
-    res.redirect('/');
-});
+var connections = {};
 
 //Hier wird der Websocket-Server definiert
 var WSS = require('websocket').server,
@@ -127,7 +111,7 @@ var wss = new WSS({
     autoAcceptConnections: false
 });
 
-var connections = {};
+//var connections = {};
 //Im Nachfolgenden ist aufgelistet, wie der Server reagiert, wenn er eine Request-Anfrage bekommt
 wss.on('request', function (request) {
     var connection = request.accept('chat', request.origin);
@@ -483,6 +467,10 @@ function checkDiagonalGameOver(game){
 function deleteGame(name){
 
     for(let i = 0; i<this._gameManager.length; i++){
+
+        if(this._gameManager[i] == null){
+            continue;
+        }
 
         if(name == this._gameManager[i][1] || name == this._gameManager[i][2]){
             this._gameManager[i] = null;
