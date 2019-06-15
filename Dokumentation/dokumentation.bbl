@@ -19,122 +19,43 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{Node.2019}{online}{}
+    \entry{Reif.2010}{book}{}
       \name{author}{1}{}{%
-        {{hash=a2fe26dca8351c347c07ce4f437eaa1b}{%
-           family={Foundation},
-           familyi={F\bibinitperiod},
-           given={Node.js},
-           giveni={N\bibinitperiod}}}%
+        {{hash=2f8af18c6f8001e858da17cf0fbe114d}{%
+           family={Knoll},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{a2fe26dca8351c347c07ce4f437eaa1b}
-      \strng{fullhash}{a2fe26dca8351c347c07ce4f437eaa1b}
-      \strng{bibnamehash}{a2fe26dca8351c347c07ce4f437eaa1b}
-      \strng{authorbibnamehash}{a2fe26dca8351c347c07ce4f437eaa1b}
-      \strng{authornamehash}{a2fe26dca8351c347c07ce4f437eaa1b}
-      \strng{authorfullhash}{a2fe26dca8351c347c07ce4f437eaa1b}
+      \name{bookauthor}{1}{}{%
+        {{hash=f38f1c694c30b868bb5241e5640cef24}{%
+           family={Reif},
+           familyi={R\bibinitperiod},
+           given={Konrad},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden}%
+      }
+      \list{publisher}{1}{%
+        {Vieweg+Teubner Verlag}%
+      }
+      \strng{namehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{fullhash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{bibnamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authorbibnamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authornamehash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{authorfullhash}{2f8af18c6f8001e858da17cf0fbe114d}
+      \strng{bookauthorbibnamehash}{f38f1c694c30b868bb5241e5640cef24}
+      \strng{bookauthornamehash}{f38f1c694c30b868bb5241e5640cef24}
+      \strng{bookauthorfullhash}{f38f1c694c30b868bb5241e5640cef24}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{About Node.js}
-      \field{urlday}{11}
-      \field{urlmonth}{6}
-      \field{urlyear}{2019}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://nodejs.org/en/about/
-      \endverb
-      \verb{url}
-      \verb https://nodejs.org/en/about/
-      \endverb
-    \endentry
-    \entry{Holmes.2013}{book}{}
-      \name{author}{1}{}{%
-        {{hash=8538973a123d95e03416655d0912002f}{%
-           family={Holmes},
-           familyi={H\bibinitperiod},
-           given={Simon},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Birmingham, UK}%
-      }
-      \list{publisher}{1}{%
-        {Packt Publishing}%
-      }
-      \strng{namehash}{8538973a123d95e03416655d0912002f}
-      \strng{fullhash}{8538973a123d95e03416655d0912002f}
-      \strng{bibnamehash}{8538973a123d95e03416655d0912002f}
-      \strng{authorbibnamehash}{8538973a123d95e03416655d0912002f}
-      \strng{authornamehash}{8538973a123d95e03416655d0912002f}
-      \strng{authorfullhash}{8538973a123d95e03416655d0912002f}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9781782168195}
-      \field{title}{Mongoose for Application Development}
-      \field{year}{2013}
-    \endentry
-    \entry{Docker.2019}{online}{}
-      \name{author}{1}{}{%
-        {{hash=f13d07e424dfd959dbca10a0a1e7081e}{%
-           family={Inc.},
-           familyi={I\bibinitperiod},
-           given={Docker},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \strng{fullhash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \strng{bibnamehash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \strng{authorbibnamehash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \strng{authornamehash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \strng{authorfullhash}{f13d07e424dfd959dbca10a0a1e7081e}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{What is a Container?}
-      \field{urlday}{13}
-      \field{urlmonth}{6}
-      \field{urlyear}{2019}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.docker.com/resources/what-container
-      \endverb
-      \verb{url}
-      \verb https://www.docker.com/resources/what-container
-      \endverb
-    \endentry
-    \entry{Chadorow.2013}{book}{}
-      \name{author}{1}{}{%
-        {{hash=6b8b0f9bd65e5f2af7d9176a2bb33d9e}{%
-           family={Chadorow},
-           familyi={C\bibinitperiod},
-           given={Kristina},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Sebastopol, USA}%
-      }
-      \list{publisher}{1}{%
-        {O'Reilly Media USA}%
-      }
-      \strng{namehash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \strng{fullhash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \strng{bibnamehash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \strng{authorbibnamehash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \strng{authornamehash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \strng{authorfullhash}{6b8b0f9bd65e5f2af7d9176a2bb33d9e}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2., vollst. {ü}berarb. Aufl.}
-      \field{isbn}{9781449344689}
-      \field{title}{MongoDB: The Definitive Guide}
-      \field{year}{2013}
+      \field{isbn}{9783834813145}
+      \field{title}{Fahrstabilisierungssysteme und Fahrerassistenzsysteme}
+      \field{year}{2010}
     \endentry
   \enddatalist
 \endrefsection

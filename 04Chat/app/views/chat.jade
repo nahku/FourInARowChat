@@ -1,14 +1,10 @@
 html
     head
         script(src="/js/jquery.js")
-        //script(src="/js/index.js")
     body
-        div(style="width:500px; text-align:right;")
-            a(href="/logout") Logout
         div#msgs(style="height:400px; width:400px; overflow: scroll; float:left; display:inline;")
         div#menu(style="height:10px; width:400px; float:right; display:inline;")
             button#startGame Start Game
-            //button#printBtn Print
             button#column1 1 
             button#column2 2
             button#column3 3
@@ -67,13 +63,6 @@ html
                         }
                     }
 
-                    /*function printMessage(msg){
-                        
-                        var msg = $('<div> Gamemaster: ' + msg +
-                                        '</div>');
-                                $('#msgs').append(msg);
-                    }*/
-
             div#gameMsg(style="height:100px; width:400px; float:right; display:inline;")
                     script.
 
@@ -90,6 +79,10 @@ html
             input#msg(type="text")
             button#sendBtn Send
             script.
+
+                //192.168.99.100 is the default IP address for docker on my laptop
+                //IMPORTANT: make sure to insert your default docker IP address 
+
                 var socket = new WebSocket('ws://192.168.99.100:8181/', 'chat');
                 socket.onopen = function () {
                     socket.send('{"type": "join", "name":"#{user}"}');
@@ -115,12 +108,6 @@ html
                     msg = 'Start new Game';
                     socket.send('{"type": "start", "msg": "' + msg + '"}');
                 });
-                /*$('#printBtn').on('click', function (e) {
-                    e.preventDefault();
-                    var name = '#{user}',
-                    msg = 0;
-                    socket.send('{"type": "board", "msg": "' + msg + '"}');
-                });*/
                 $('#column1').on('click', function (e) {
                     e.preventDefault();
                     var name = '#{user}',
