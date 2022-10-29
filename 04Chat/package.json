@@ -16,7 +16,7 @@
     "jade": "^1.11.0",
     "mongodb": "^3.2.4",
     "mongoose": "^5.5.11",
-    "socket.io": "^1.4.6",
+    "socket.io": "^4.5.3",
     "websocket": "^1.0.22"
   }
 }
